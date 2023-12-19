@@ -1,0 +1,15 @@
+:root {
+ --main-blue: '#011627';
+ --secundary-blue: '#011627';
+ --light-blue: '#607B96';
+ --gray: '#1E2D3D';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #011627;
+  box-sizing: border-box;
+
+}
+
