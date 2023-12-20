@@ -59,6 +59,15 @@ const GitHubLink = styled.a`
         img {
             content: url(${'./logos/github-light.png'});
         }
+    }
+
+    > span {
+        @media (max-width: 600px) {
+            display: none;
+          }
+    }
+    
+    
 
 `
 
@@ -71,7 +80,7 @@ const Footer = () => {
             </DivNome>
 
             <Logo leftBorder={true}>
-                <a href='https://www.linkedin.com/in/davi-marquesc/'>
+                <a href='https://www.linkedin.com/in/davi-marquesc/' target="_blank" rel="noopener noreferrer">
                     <Image src={linkedinDark} alt='Linkedin Logo' width={24} height={24} />
                 </a>
             </Logo>
@@ -82,10 +91,11 @@ const Footer = () => {
             </Logo> */}
         </FindMe>
 
-        <GitHubLink href='#'>
+        <GitHubLink href='https://github.com/davimcostaa' target="_blank" rel="noopener noreferrer">
             <span>@davimcostaa</span>
             <Image src={gitHubDark} alt='GitHub Logo' width={24} height={24} />
         </GitHubLink>
+
     </FooterStyled>
   )
 }

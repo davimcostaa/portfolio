@@ -1,6 +1,10 @@
-"use client"
-import React from 'react'
+"use client";
+import React from 'react';
 import styled from 'styled-components';
+
+interface Props {
+  setMenuIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 const Header = styled.header`
   width: 100vw;
@@ -11,23 +15,32 @@ const Header = styled.header`
   padding-left: 23px;
   padding-right: 23px;
   justify-content: space-between;
-`
+`;
 
 const PrimeiraParte = styled.div`
   display: flex;
   height: 100%;
   align-items: center;
-`
+`;
 
 const DivNome = styled.div`
   color: #607B96;
   margin-right: 124px;
-`
+  cursor: pointer;
+
+  &: hover {
+    color: #FFF;
+  }
+`;
 
 const Links = styled.div`
   display: flex;
   height: 100%;
-`
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`;
 
 const LinkNavegacao = styled.div`
   color: #607B96;
@@ -39,7 +52,12 @@ const LinkNavegacao = styled.div`
   align-items: center;
   cursor: pointer;
   height: 100%;
-`
+
+  &: hover {
+    color: #FFF;
+  }
+  
+`;
 
 const LinkContato = styled.div`
   color: #607B96;
@@ -49,9 +67,25 @@ const LinkContato = styled.div`
   align-items: center;
   cursor: pointer;
   height: 100%;
-`
 
-const Menu = () => {
+  @media (max-width: 700px) {
+    display: none;
+  }
+
+  &: hover {
+    color: #FFF;
+  }
+`;
+
+const NomeImagemWrapper = styled.div`
+  display: none; 
+
+  @media (max-width: 700px) {
+    display: flex;
+  }
+`;
+
+const Menu = ({setMenuIsVisible}: Props) => {
   return (
     <Header>
       <PrimeiraParte>
@@ -72,11 +106,15 @@ const Menu = () => {
         </Links>
       </PrimeiraParte>
       
+      <NomeImagemWrapper onClick={() => setMenuIsVisible(true)}>
+        <img src="/menu.png" alt="Menu" />
+      </NomeImagemWrapper>
+
       <LinkContato>
         _contact-me
       </LinkContato>
     </Header>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;
