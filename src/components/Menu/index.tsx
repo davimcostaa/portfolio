@@ -37,7 +37,7 @@ const Links = styled.div`
   display: flex;
   height: 100%;
 
-  @media (max-width: 700px) {
+  @media (max-width: 810px) {
     display: none;
   }
 `;
@@ -68,7 +68,7 @@ const LinkContato = styled.div`
   cursor: pointer;
   height: 100%;
 
-  @media (max-width: 700px) {
+  @media (max-width: 810px) {
     display: none;
   }
 
@@ -80,7 +80,7 @@ const LinkContato = styled.div`
 const NomeImagemWrapper = styled.div`
   display: none; 
 
-  @media (max-width: 700px) {
+  @media (max-width: 810px) {
     display: flex;
   }
 `;
