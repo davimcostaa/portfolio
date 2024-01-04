@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -44,7 +45,6 @@ const Links = styled.div`
 `;
 
 const LinkNavegacao = styled.div`
-  color: #607B96;
   border-left: 0.5px solid #1E2D3D;
   border-right: 0.5px solid #1E2D3D;
   padding-left: 31px;
@@ -54,9 +54,15 @@ const LinkNavegacao = styled.div`
   cursor: pointer;
   height: 100%;
 
-  &: hover {
-    color: #FFF;
+  > a {
+    text-decoration: none;
+    color: #607B96;
+
+    &: hover {
+      color: #FFF;
+    }
   }
+  
   
 `;
 
@@ -96,13 +102,19 @@ const Menu = ({setMenuIsVisible}: Props) => {
         
         <Links>
             <LinkNavegacao>
-                _hello
+                <Link href='/'>
+                  _hello
+                </Link>
             </LinkNavegacao>
             <LinkNavegacao>
-                _about-me
+                <Link href='/about-me'>
+                  _about-me
+                </Link>
             </LinkNavegacao>
             <LinkNavegacao>
-                _projects
+            <Link href='/about-me'>
+                  _projects
+                </Link>
             </LinkNavegacao>
         </Links>
       </PrimeiraParte>

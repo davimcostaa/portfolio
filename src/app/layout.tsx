@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Fira_Code } from 'next/font/google'
 import './globals.css'
+import StyledComponentsRegistry from './styled-components-registry'
 
 const font = Fira_Code({ subsets: ['latin'] })
 
@@ -15,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
     </html>
   )
 }
