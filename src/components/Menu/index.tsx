@@ -15,6 +15,7 @@ const Header = styled.header`
   padding-left: 23px;
   padding-right: 23px;
   justify-content: space-between;
+  position: absolute;
 `;
 
 const PrimeiraParte = styled.div`
