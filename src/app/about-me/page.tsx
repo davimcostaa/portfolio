@@ -3,15 +3,18 @@ import Footer from '@/src/components/Footer';
 import Menu from '@/src/components/Menu'
 import MenuMobile from '@/src/components/MenuMobile';
 import React, { useState } from 'react'
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 // import { Menu as DropDown} from 'antd'
 
+interface FolterContactProps {
+  isOpen: boolean;
+}
+
 const Body = styled.div`
-  padding-top: 56.191px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
+    padding-top: 56.191px;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
 `
 
 const Folders = styled.section`
@@ -23,11 +26,11 @@ const Folders = styled.section`
     border-right: 0.5px solid #1E2D3D;
     font-size: 16px;
     font-weight: 400;
-
+    justify-content: space-between;
 `
 
 const FolderName = styled.div`
-  cursor: pointer;
+    cursor: pointer;
     height: 40.6px;
     width: 100%;
     border-bottom: 0.5px solid #1E2D3D;
@@ -39,32 +42,107 @@ const FolderName = styled.div`
     margin-bottom: 16px;
 `
 
+const FileName = styled.div`
+    cursor: pointer;
+    height: 40.6px;
+    width: 218.48px;
+    border-bottom: 0.5px solid #1E2D3D;
+    border-right: 0.5px solid #1E2D3D;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 7px;
+    margin-bottom: 16px;
+    color: #607B96;
+`
+
+
 const Folder = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 23px;
-  gap: 13px;
-  cursor: pointer;
-  margin-bottom: 15.8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 23px;
+    gap: 13px;
+    cursor: pointer;
+    margin-bottom: 15.8px;
 `
 
 const NomePasta = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8.92px;
+    display: flex;
+    align-items: center;
+    gap: 8.92px;
 
 `
 
 const PrimeiraParte = styled.div`
-  display: flex;
-  width: 100%;
-  gap: 13px;
-  align-items: center;
+    display: flex;
+    width: 100%;
+    gap: 13px;
+    align-items: center;
 
-  > img {
+    > img {
 
-  }
+    }
+`
+
+const DivContact = styled.div<FolterContactProps>`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 56px;
+
+    ${(props) => css`
+      ${props.isOpen &&
+      css`
+        margin-bottom: 200px;
+        > div > img {
+          transform: rotate(360deg);
+        `}
+    
+    `}
+`;
+
+const FolterContact = styled.div`
+    cursor: pointer;
+    height: 40.6px;
+    width: 100%;
+    border-bottom: 0.5px solid #1E2D3D;
+    border-top: 0.5px solid #1E2D3D;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 7px;
+    padding-left: 23px;
+    img {
+      transform: rotate(-90deg);
+    }
+  
+`;
+
+const Contact = styled.div<FolterContactProps>`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4px;
+    padding-top: 10px;
+
+    ${(props) => css`
+    ${!props.isOpen &&
+    css`
+      padding-top: 5px;
+      `}
+    
+  `}
+`
+
+const ContactText = styled.span`
+      color: #607B96;
+      font-size: 14.5px;
+      font-weight: 400;
+`;
+
+const CodeSection = styled.section`
+      width: 674px;
+      border-right: 0.5px solid #1E2D3D;
 `
 
 const AboutMe = () => {
@@ -73,6 +151,7 @@ const AboutMe = () => {
   const [bioIsOpen, setBioIsOpen] = useState(false);
   const [interestsIsOpen, setInterestsIsOpen] = useState(false);
   const [educationIsOpen, setEducationIsOpen] = useState(false);
+  const [contactIsOpen, setContactIsOpen] = useState(false);
   
   return (
     <>
@@ -81,6 +160,8 @@ const AboutMe = () => {
 
       <Body>
         <Folders>
+          <div>
+
             <FolderName>
                 <img src='/arrow-down.png' />
                 personal-info
@@ -112,8 +193,8 @@ const AboutMe = () => {
                  {bioIsOpen ? (
                     <div>
                             <NomePasta >
-                            <img src='/blue-icon.png' />
-                            education
+                            <img src='/file.png' />
+                            about-me
                             </NomePasta>
                     </div>
                   ) : null}
@@ -151,18 +232,44 @@ const AboutMe = () => {
                     
                     {educationIsOpen ? (
                         <NomePasta >
-                        <img src='/blue-icon.png' />
-                        education
+                        <img src='/file.png' />
+                        university
                         </NomePasta>
                     ) : null}
 
                       
                   </Folder>
-
-
               </div>
+            </div>
+            <DivContact isOpen={contactIsOpen} onClick={() => setContactIsOpen(!contactIsOpen)}>
+                  <FolterContact>
+                      <img src='/arrow-down.png' />
+                      contacts
+                  </FolterContact>
+
+                  <Contact isOpen={contactIsOpen}>
+                    <img src='/mail-icon.png' />
+                    <ContactText> davim.costa@outlook.com</ContactText>
+                  </Contact>
+
+                  <Contact isOpen={contactIsOpen}>
+                    <img src='/phone-icon.png' />
+                    <ContactText> (61) 99391-5306</ContactText>
+                  </Contact>
+            </DivContact>
+
         </Folders>
 
+        <CodeSection>
+          
+            <FileName>
+                personal-info
+                <img src='/close-icon.png' />
+            </FileName>
+
+
+
+        </CodeSection>
 
       </Body>
 
