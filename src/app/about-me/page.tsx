@@ -2,6 +2,7 @@
 import Footer from '@/src/components/Footer';
 import Menu from '@/src/components/Menu'
 import MenuMobile from '@/src/components/MenuMobile';
+import TechnologyCheck from '@/src/components/TechnologyCheck';
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components';
 
@@ -10,7 +11,6 @@ interface FolterContactProps {
 }
 
 const Body = styled.div`
-    width: 100vw;
     padding-top: 56.191px;
     display: flex;
     height: 100vh;
@@ -140,25 +140,24 @@ const ContactText = styled.span`
       color: #607B96;
       font-size: 14.5px;
       font-weight: 400;
+
+
 `;
 
 const CodeSection = styled.section`
       width: 674px;
       border-right: 0.5px solid #1E2D3D;
-
-      @media screen and (max-width: 1400px) {
-        width: 610px;
-      }
-
+      
 `
 
 const Code = styled.section`
     display: flex;
     border-top: 0.5px solid #1E2D3D;
-    @media screen and (max-width: 1350px) {
+    overflow: auto;
+    @media screen and (max-width: 1450px) {
       scrollbar-width: thin;   
       max-height: 470px;
-      overflow-y: auto;
+      overflow-y: scroll;
       &::-webkit-scrollbar {
         width: 10px;
       }
@@ -202,7 +201,8 @@ const Text = styled.div`
       }
 
       @media screen and (max-width: 1400px) {
-        margin-left: 35px;
+        margin-left: 20px;
+        margin-right: 20px;
         > p {
           padding-left: 10px;
         }
@@ -213,22 +213,59 @@ const Text = styled.div`
 const TechnologiesSection = styled.section`
     margin-top: 40.6px;
     border-top: 0.5px solid #1E2D3D;
-    width: 745px;
-
+    flex: 1;
 `
 
 const Post = styled.div`  
+      width: 664px;
+      margin: 40.5px;
 `
 
 const User = styled.div`
 
 `
 
+const UserTop = styled.div`
+    display: flex;
+    gap: 10.5px;
+`
+
+const UserData = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    > span {
+      color: #607B96;
+      font-size: 12px;
+    }
+`
+
+const UserName = styled.p`
+    color: #5565E8;
+    font-size: 14px;
+`
+
 const Profile = styled.img`
     width: 36px;
     height: 36px;
     border-radius: 36px;
+`
 
+const PostContent = styled.div`
+    width: 65%;
+    height: 215.647px;
+    border-radius: 15px;
+    border: 1px solid #1E2D3D;
+    background: #011221;
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    padding: 29px;
+
+    @media screen and (min-width: 1400px) {
+      width: 80%;
+    }
 `
 
 const AboutMe = () => {
@@ -244,10 +281,10 @@ const AboutMe = () => {
       * About me
       * A 20-year-old professional with a technical 
       * background in IT and a degree in
-      * Systems Analysis and Development, blending skills 
-      * in React, Next.js, Python,
-      * React Native, Express, and AdonisJS. Experienced 
-      * in IT support, advanced
+      * Systems Analysis and Development, blending 
+      * skills in React, Next.js, Python,
+      * React Native, Express, and AdonisJS. 
+      * Experienced in IT support, advanced
       * proficiency in English, and expertise in 
       * automation and data processing with Python, as 
       * well as creating applications with React.
@@ -295,7 +332,6 @@ const AboutMe = () => {
       * 
       * Finished in December 2023.
 `;
-
   
   const [openText, setOpenText] = useState(aboutMe);
   const [fileName, setFileName] = useState('about-me');
@@ -449,18 +485,30 @@ const AboutMe = () => {
             
         </CodeSection>
 
-
         <TechnologiesSection>
             <Post>
                 <User>
-                    <div>
+                    <UserTop>
                       <Profile src='/profile.jpg' />
-                    </div>
-
-                    <div>
-
-                    </div>
+                      <UserData>
+                        <UserName>@davimcostaa</UserName>
+                        <span>Created 5 months ago</span>
+                      </UserData>
+                    </UserTop>
                </User>
+               
+               <PostContent>
+                  <TechnologyCheck icon='html' name='HTML' />
+                  <TechnologyCheck icon='css' name='CSS' />
+                  <TechnologyCheck icon='javascript' name='JavaScript' />
+                  <TechnologyCheck icon='react' name='React' />
+                  <TechnologyCheck icon='typescript' name='TypeScript' />
+                  <TechnologyCheck icon='next' name='Next.js' />
+                  <TechnologyCheck icon='express' name='Express' />
+                  <TechnologyCheck icon='selenium' name='Selenium' />
+                  <TechnologyCheck icon='python' name='Python' />
+               </PostContent>
+               
             </Post>
         </TechnologiesSection>
 

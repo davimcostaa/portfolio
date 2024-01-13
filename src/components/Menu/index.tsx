@@ -33,6 +33,11 @@ const DivNome = styled.div`
   &: hover {
     color: #FFF;
   }
+
+  @media screen and (max-width: 1674px) {
+    margin-right: 101px;
+  }
+
 `;
 
 const Links = styled.div`
