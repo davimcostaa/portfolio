@@ -117,7 +117,7 @@ const Menu = ({setMenuIsVisible}: Props) => {
                 </Link>
             </LinkNavegacao>
             <LinkNavegacao>
-            <Link href='/about-me'>
+            <Link href='/projects'>
                   _projects
                 </Link>
             </LinkNavegacao>

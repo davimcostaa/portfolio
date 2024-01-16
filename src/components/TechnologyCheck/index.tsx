@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 interface Props {
     icon: string
     name: string
+    changeIcon?: boolean
+    onClick?: () => void
 }
 
 const Check = styled.div`
+    cursor: pointer;
     display: flex;
     width: fit-content;
     margin-right: 50px;
@@ -22,10 +25,13 @@ const CheckIcon = styled.img`
     height: 18.812px;
 `
 
-const TechnologyCheck = ({icon, name}: Props) => {
+const TechnologyCheck = ({icon, name, changeIcon}: Props) => {
+
+    const [checked, setChecked] = useState(true)
+
   return (
-    <Check>
-        <CheckIcon src='/check-icon.png' />
+    <Check onClick={() => setChecked(!checked)}>
+        {changeIcon && checked ? <CheckIcon src='/notcheck-icon.png' /> : <CheckIcon src='/check-icon.png' />}
         <img src={`/logos/${icon}-icon.png`} />
         <span> {name} </span>
     </Check>
