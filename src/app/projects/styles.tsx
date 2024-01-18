@@ -160,25 +160,31 @@ export const CodeSection = styled.section`
 `
 
 export const Code = styled.section`
+    padding: 15px 0px 15px 0px;
     display: flex;
     border-top: 0.5px solid #1E2D3D;
     overflow: auto;
-    @media screen and (max-width: 1450px) {
-      scrollbar-width: thin;   
-      max-height: 470px;
-      overflow-y: scroll;
-      &::-webkit-scrollbar {
-        width: 10px;
-      }
-    
-      &::-webkit-scrollbar-thumb {
-        background-color: #607B96;
-      }
-    
-      &::-webkit-scrollbar-track {
-        background-color: #011627;
-      }
+    &::-webkit-scrollbar {
+      width: 10px;
     }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: #607B96;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background-color: #011627;
+    }
+`
+
+export const Projects = styled.section`
+    width: 90%;
+    display: flex;
+    max-height: 75vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
 `
 
 export const Numbers = styled.div`

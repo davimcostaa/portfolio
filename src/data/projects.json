@@ -1,0 +1,81 @@
+[
+    {
+      "nomeDoProjeto": "7daysofcode",
+      "imagem": "landingpage.png",
+      "descricao": "Landing page desenvolvida no 7 days Of Code.",
+      "tecnologia": "HTML",
+      "link": "https://davimcostaa.github.io/7daysofCode/"
+    },
+    {
+        "nomeDoProjeto": "alura-books",
+        "imagem": "alurabooks.png",
+        "descricao": "Landing page desenvolvida no curso de HTML e CSS da Alura.",
+        "tecnologia": "HTML",
+        "link": "https://davimcostaa.github.io/alura-books/"
+    },
+    {
+        "nomeDoProjeto": "blockchain-page",
+        "imagem": "blockchain-page.png",
+        "descricao": "Landing page desenvolvida segundo design do Figma.",
+        "tecnologia": "HTML",
+        "link": "https://davimcostaa.github.io/landing_page/"
+    },
+    {
+      "nomeDoProjeto": "formulario-dark-light",
+      "imagem": "formulario.png",
+      "descricao": "Formulário que muda de tema com a manipulação do DOM.",
+      "tecnologia": "Javascript",
+      "link": "https://davimcostaa.github.io/landing_page/"
+    },
+    {
+      "nomeDoProjeto": "api-clima",
+      "imagem": "clima.png",
+      "descricao": "Aplicação que consulta a API do Open Weather e do Unsplash.",
+      "tecnologia": "Javascript",
+      "link": "https://clima-api-theta.vercel.app"
+    },
+    {
+        "nomeDoProjeto": "api-filmes",
+        "imagem": "filmes.png",
+        "descricao": "Aplicação que consulta a API do The Movie Database.",
+        "tecnologia": "Javascript",
+        "link": "https://api-movies-bice.vercel.app"
+    },
+    {
+      "nomeDoProjeto": "codechella",
+      "imagem": "codechella.png",
+      "descricao": "Landing page de um festival de música.",
+      "tecnologia": "react",
+      "link": "https://codechella-omega.vercel.app"
+    },
+    {
+      "nomeDoProjeto": "cronometro-estudos",
+      "imagem": "cronometro.png",
+      "descricao": "Cronômetro para estudos desenvolvido com TypeScript.",
+      "tecnologia": "react",
+      "link": "https://alura-studies-typescript.vercel.app"
+    },
+    {
+      "nomeDoProjeto": "aluroni",
+      "imagem": "restaurante.png",
+      "descricao": "Página de divulgação de um restaurante com TypeScript.",
+      "tecnologia": "react",
+      "link": "https://aluroni-typescript.vercel.app"
+    },
+    {
+      "nomeDoProjeto": "de-olho",
+      "imagem": "deolho.png",
+      "descricao": "Projeto da faculdade consumindo a API dos Dados Abertos.",
+      "tecnologia": "next",
+      "link": "https://de-olho.vercel.app"
+    },
+    {
+      "nomeDoProjeto": "portfolio",
+      "imagem": "portfolio.png",
+      "descricao": "Portfólio pessoal desenvolvido com Next e TypeScript.",
+      "tecnologia": "next",
+      "link": "https://de-olho.vercel.app"
+    }
+
+  ]
+  
