@@ -25,12 +25,18 @@ const CheckIcon = styled.img`
     height: 18.812px;
 `
 
-const TechnologyCheck = ({icon, name, changeIcon}: Props) => {
+const TechnologyCheck = ({icon, name, changeIcon, onClick}: Props) => {
+    const [checked, setChecked] = useState(true);
 
-    const [checked, setChecked] = useState(true)
+    const handleClick = () => {
+        setChecked(!checked);
+        if (onClick) {
+          onClick();
+        }
+      };
 
   return (
-    <Check onClick={() => setChecked(!checked)}>
+    <Check onClick={handleClick}>
         {changeIcon && checked ? <CheckIcon src='/notcheck-icon.png' /> : <CheckIcon src='/check-icon.png' />}
         <img src={`/logos/${icon}-icon.png`} />
         <span> {name} </span>

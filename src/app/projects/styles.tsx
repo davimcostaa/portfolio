@@ -160,7 +160,7 @@ export const CodeSection = styled.section`
 `
 
 export const Code = styled.section`
-    padding: 15px 0px 15px 0px;
+    padding: 5px 0px 15px 0px;
     display: flex;
     border-top: 0.5px solid #1E2D3D;
     overflow: auto;
@@ -180,11 +180,16 @@ export const Code = styled.section`
 export const Projects = styled.section`
     width: 90%;
     display: flex;
-    max-height: 75vh;
+    max-height: 80vh;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: 1674px) {
+      max-height: 70vh;
+    }
 `
 
 export const Numbers = styled.div`

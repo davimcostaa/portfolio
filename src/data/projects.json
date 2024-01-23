@@ -25,7 +25,7 @@
       "imagem": "formulario.png",
       "descricao": "Formulário que muda de tema com a manipulação do DOM.",
       "tecnologia": "Javascript",
-      "link": "https://davimcostaa.github.io/landing_page/"
+      "link": "https://davimcostaa.github.io/formulario_dark_light/"
     },
     {
       "nomeDoProjeto": "api-clima",
@@ -45,36 +45,85 @@
       "nomeDoProjeto": "codechella",
       "imagem": "codechella.png",
       "descricao": "Landing page de um festival de música.",
-      "tecnologia": "react",
+      "tecnologia": "React",
       "link": "https://codechella-omega.vercel.app"
     },
     {
       "nomeDoProjeto": "cronometro-estudos",
       "imagem": "cronometro.png",
       "descricao": "Cronômetro para estudos desenvolvido com TypeScript.",
-      "tecnologia": "react",
+      "tecnologia": "React",
       "link": "https://alura-studies-typescript.vercel.app"
     },
     {
       "nomeDoProjeto": "aluroni",
       "imagem": "restaurante.png",
       "descricao": "Página de divulgação de um restaurante com TypeScript.",
-      "tecnologia": "react",
+      "tecnologia": "React",
       "link": "https://aluroni-typescript.vercel.app"
+    },
+    {
+      "nomeDoProjeto": "voll",
+      "imagem": "voll.png",
+      "descricao": "Aplicação web em React com cadastro, login e dashboard.",
+      "tecnologia": "React",
+      "link": "https://voll-nine.vercel.app"
     },
     {
       "nomeDoProjeto": "de-olho",
       "imagem": "deolho.png",
       "descricao": "Projeto da faculdade consumindo a API dos Dados Abertos.",
-      "tecnologia": "next",
+      "tecnologia": "Next",
       "link": "https://de-olho.vercel.app"
+    },
+    {
+      "nomeDoProjeto": "jornada-do-heroi",
+      "imagem": "jornada.png",
+      "descricao": "Aplicação consultando API externa e criando um jogo de cartas.",
+      "tecnologia": "Next",
+      "link": "https://jornada-do-heroi-kappa.vercel.app"
+    },
+    {
+      "nomeDoProjeto": "ponto-de-venda",
+      "imagem": "pdv.png",
+      "descricao": "Protótipo de um ponto de venda por um projeto de extensão acadêmico.",
+      "tecnologia": "Next",
+      "link": "https://github.com/fabrica-bayarea/pdv-front/tree/develop"
     },
     {
       "nomeDoProjeto": "portfolio",
       "imagem": "portfolio.png",
       "descricao": "Portfólio pessoal desenvolvido com Next e TypeScript.",
-      "tecnologia": "next",
+      "tecnologia": "Next",
       "link": "https://de-olho.vercel.app"
+    },
+    {
+      "nomeDoProjeto": "google-sheets",
+      "imagem": "sheets.png",
+      "descricao": "Script para extrair tabela online, tratá-la e lançar no Sheets.",
+      "tecnologia": "Python",
+      "link": "https://github.com/davimcostaa/google-sheets"
+    },
+    {
+      "nomeDoProjeto": "siafi-pandas",
+      "imagem": "pandas.png",
+      "descricao": "Script para tratamento de tabela excel.",
+      "tecnologia": "Python",
+      "link": "https://github.com/davimcostaa/TratamentoDados-Pandas"
+    },
+    {
+      "nomeDoProjeto": "adonis-academico",
+      "imagem": "adonis-academico.png",
+      "descricao": "API criada com AdonisJS na matéria de BackEnd da faculdade.",
+      "tecnologia": "Adonis",
+      "link": "https://github.com/davimcostaa/Adonis-Academico-2022"
+    },
+    {
+      "nomeDoProjeto": "adonis-biblioteca",
+      "imagem": "adonis-biblioteca.png",
+      "descricao": "API criada para o projeto integrado de backend da faculdade.",
+      "tecnologia": "Adonis",
+      "link": "https://github.com/davimcostaa/adonis-biblioteca"
     }
 
   ]
