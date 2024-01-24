@@ -72,6 +72,7 @@ const LinkNavegacao = styled.div`
 `;
 
 const LinkContato = styled.div`
+  text-decoration: none;
   color: #607B96;
   border-left: 0.5px solid #1E2D3D;
   padding-left: 31px;
@@ -84,9 +85,13 @@ const LinkContato = styled.div`
     display: none;
   }
 
-  &: hover {
-    color: #FFF;
-  }
+  > a {
+    text-decoration: none;
+    color: #607B96;
+
+    &: hover {
+      color: #FFF;
+    }
 `;
 
 const NomeImagemWrapper = styled.div`
@@ -119,7 +124,7 @@ const Menu = ({setMenuIsVisible}: Props) => {
             <LinkNavegacao>
             <Link href='/projects'>
                   _projects
-                </Link>
+            </Link>
             </LinkNavegacao>
         </Links>
       </PrimeiraParte>
@@ -129,7 +134,9 @@ const Menu = ({setMenuIsVisible}: Props) => {
       </NomeImagemWrapper>
 
       <LinkContato>
-        _contact-me
+          <Link href='/contact-me'>
+           _contact-me
+          </Link>
       </LinkContato>
     </Header>
   );

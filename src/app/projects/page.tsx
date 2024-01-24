@@ -57,6 +57,8 @@ const ProjectsPage = () => {
       setFilters([]);
       setRepeated([]);
     }
+
+    // checar se o estado repeated possui itens duplicados
     
   }, [auxFilters]);
 

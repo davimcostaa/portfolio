@@ -70,6 +70,20 @@
       "link": "https://voll-nine.vercel.app"
     },
     {
+      "nomeDoProjeto": "biblioteca-mobile",
+      "imagem": "biblioteca.png",
+      "descricao": "Aplicação mobile em React Native com cadastro, login e CRUDs.",
+      "tecnologia": "React",
+      "link": "https://github.com/davimcostaa/biblioteca_mobile"
+    },
+    {
+      "nomeDoProjeto": "weather-runner",
+      "imagem": "weather-runner.png",
+      "descricao": "Jogo e app em React Native com estilo condicional ao clima. ",
+      "tecnologia": "React",
+      "link": "https://github.com/imxamanda/WeatherRunner"
+    },
+    {
       "nomeDoProjeto": "de-olho",
       "imagem": "deolho.png",
       "descricao": "Projeto da faculdade consumindo a API dos Dados Abertos.",

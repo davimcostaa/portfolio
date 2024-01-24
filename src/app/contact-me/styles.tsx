@@ -38,7 +38,7 @@ export const FolderName = styled.div`
 export const FileName = styled.div`
     cursor: pointer;
     height: 41px;
-    width: 218.48px;
+    width: 100%;
     border-right: 0.5px solid #1E2D3D;
     display: flex;
     align-items: center;
@@ -55,6 +55,7 @@ export const Folder = styled.div`
     gap: 13px;
     cursor: pointer;
     margin-bottom: 15.8px;
+    width: 100%;
 `
 
 export const NomePasta = styled.div`
@@ -140,13 +141,15 @@ export const CodeSection = styled.section`
       width: 630px;
       max-width: 674px;
       border-right: 0.5px solid #1E2D3D;    
-      @media screen and (min-width: 1500px) {
-        width: 760px;
-      }
 `
 
 export const Code = styled.section`
     display: flex;
+    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
     border-top: 0.5px solid #1E2D3D;
     overflow: auto;
     @media screen and (max-width: 1450px) {
@@ -262,4 +265,15 @@ export const PostContent = styled.div`
     @media screen and (min-width: 1500px) {
       width: 100%;
     }
+`
+
+export const Button = styled.button`
+  border-radius: 8px;
+  background: #1C2B3A;
+  padding: 10px 14px;
+  width: 146px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
 `
