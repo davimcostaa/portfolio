@@ -20,6 +20,9 @@ export const Folders = styled.section`
     font-size: 16px;
     font-weight: 400;
     justify-content: space-between;
+
+
+
 `
 
 export const FolderName = styled.div`
@@ -209,10 +212,29 @@ export const Text = styled.div`
 `
 
 export const TechnologiesSection = styled.section`
-      margin-top: 40.6px;
-      border-top: 0.5px solid #1E2D3D;
-      flex: 1;
       width: 740px;
+      display: flex;
+      flex-direction: column;
+      padding-top: 100px;
+      margin-left: 40px;
+      overflow-y: auto;
+      scrollbar-width: thin;   
+      max-height: 470px;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        background-color: #607B96;
+      }
+    
+      &::-webkit-scrollbar-track {
+        background-color: #011627;
+      }
+      > div {
+        width: 85%;
+      }
 `
 
 export const Post = styled.div`  
@@ -276,4 +298,18 @@ export const Button = styled.button`
   color: #fff;
   font-size: 14px;
   cursor: pointer;
+  margin-top: 13px;
+`
+
+export const Message = styled.p`
+    color: #C98BDF;
+    margin-bottom: 15px;
+    > span {
+      color: #5565E8;
+      word-wrap: break-word;
+    }
+`
+
+export const OrangeText = styled.span`
+    color: #FEA55F;
 `

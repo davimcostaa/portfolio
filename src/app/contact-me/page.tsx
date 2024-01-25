@@ -3,16 +3,32 @@ import Footer from '@/src/components/Footer';
 import Input from '@/src/components/Input';
 import Menu from '@/src/components/Menu'
 import MenuMobile from '@/src/components/MenuMobile';
-import TechnologyCheck from '@/src/components/TechnologyCheck';
-import React, { useState } from 'react'
-import { Body, Folders, FolderName, Folder, PrimeiraParte, NomePasta, SubPasta, DivContact, FolterContact, Contact, ContactText, CodeSection, FileName, Code, Numbers, TechnologiesSection, Post, User, UserTop, Profile, UserData, UserName, PostContent, Text, Button } from './styles';
+import React, { useState, FormEvent } from 'react'
+import { Body, Folders, FolderName, Folder, PrimeiraParte, NomePasta, SubPasta, DivContact, FolterContact, Contact, ContactText, CodeSection, FileName, Code, Numbers, TechnologiesSection, Post, User, UserTop, Profile, UserData, UserName, PostContent, Text, Button, Message, OrangeText } from './styles';
+import * as yup from "yup";
 
 const AboutMe = () => {
 
   const [menuIsVisible, setMenuIsVisible] = useState(false);
-  const [email, setEmailOpen] = useState(false);
+  const [emailFolder, setEmailOpen] = useState(false);
   const [contactIsOpen, setContactIsOpen] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [erros, setErros] = useState([]);
   const [numberOfLines, setNumberOfLines] = useState<number[]>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+
+  let dataAtual = new Date();
+  let nomeDoDia = dataAtual.toLocaleDateString('pt-BR', { weekday: 'long' });
+  let dia = dataAtual.getDate();
+  let nomeDoMes = dataAtual.toLocaleDateString('pt-BR', { month: 'long' });
+  let emailMessage = {}
+
+  let schema = yup.object().shape({
+    name: yup.string().required(),
+    email: yup.string().email().required(),
+    message: yup.string().required()
+  });
 
   const handleClick = (text: string, fileName: string) => {
     contarLinhas(text);
@@ -28,6 +44,29 @@ const AboutMe = () => {
     }
 
     setNumberOfLines(linesArray)
+  }
+
+  async function sendEmail(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    emailMessage = {
+      name,
+      email,
+      message
+    };
+  
+    schema
+    .validate(emailMessage, { abortEarly: false })
+    .then((responseData) => {
+      console.log("no validation errors");
+      console.log(responseData);
+  })
+    .catch((err) => {
+      console.log(err);
+      console.log(err.name); // ValidationError
+      console.log(err.errors);
+      setErros(err.errors)
+
+  });
   }
 
 
@@ -46,9 +85,9 @@ const AboutMe = () => {
             </FolderName>
 
               <div>
-              <Folder onClick={() => setEmailOpen(!email)}>
+              <Folder onClick={() => setEmailOpen(!emailFolder)}>
                   <PrimeiraParte>
-                    {email ? <img src={`/arrow-open.png`} /> : <img src={`/arrow-right.png`} />}
+                    {emailFolder ? <img src={`/arrow-open.png`} /> : <img src={`/arrow-right.png`} />}
 
                     <NomePasta>
                       <img src='/pink-icon.png' />
@@ -56,7 +95,7 @@ const AboutMe = () => {
                     </NomePasta>
                   </PrimeiraParte>
 
-                  {email ? (
+                  {emailFolder ? (
                     <div onClick={(e) => { e.stopPropagation();}}>
                         <SubPasta>
                           <img src='/file.png' />
@@ -93,22 +132,50 @@ const AboutMe = () => {
                 <img src='/close-icon.png' />
             </FileName>
 
-            <Code>
-                    <Input label='name:' />
-                    <Input label='email:' />
-                    <Input label='message:' size='big' />
 
-                    <Button>
-                      submit-message
-                    </Button>
+            <Code>
+              <form onSubmit={sendEmail}>
+                <Input label='name:' onChange={(e) => setName(e.target.value)} />
+                <span>{erros[0]}</span>
+                <Input label='email:' onChange={(e) => setEmail(e.target.value)} />
+                <span>{erros[1]}</span>
+                <Input label='message:' size='big' onChange={(e) => setMessage(e.target.value)} />
+                <span>{erros[2]}</span>
+                <Button type='submit'>
+                  submit-message
+                </Button>
+              </form>
+
                     
             </Code>
             
         </CodeSection>
 
         <TechnologiesSection>
-        
-           
+          <div>
+              <Message>const <span>button</span> = <span>document.querySelector('<OrangeText>#textBtn</OrangeText>');</span></Message>
+              <Message>const <span>message</span> = 
+                <span> &#123; <br />
+                  &nbsp;name: <OrangeText>"{name}",</OrangeText> <br />
+                  &nbsp;email: <OrangeText>"{email}",</OrangeText> <br />
+                  &nbsp;message: <OrangeText>"{message}",</OrangeText> <br />
+                  &nbsp;date: <OrangeText>{nomeDoDia}, {dia} {nomeDoMes} </OrangeText> <br />
+                  &#125;  
+                </span>
+              </Message>
+          </div>
+
+
+              <Message>
+                  <span>
+                      button.addEventListener('<OrangeText>click</OrangeText>', () =&#62; &#123;
+                      <br/>
+                      &nbsp;form.send(message);
+                      <br /> 
+                      &#125;);
+                  </span>
+              </Message>
+            
         </TechnologiesSection>
 
       </Body>

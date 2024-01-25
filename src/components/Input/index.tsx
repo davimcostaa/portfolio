@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
+import { UseFormReturn } from 'react-hook-form';
 import styled from 'styled-components'
-import css from 'styled-jsx/css';
 
 interface Props {
     label: string
     size?: string
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 interface SizeProps {
@@ -32,7 +33,7 @@ const StylizedInput = styled.input<SizeProps>`
     width: 372px;
     color: #465E77;
     padding: 10px 15px 10px 15px;
-
+    margin-bottom: 10px;
     height: ${(props) => (props.size === 'big' ? '100px' : '41px')};
 
     &:focus {
@@ -40,13 +41,13 @@ const StylizedInput = styled.input<SizeProps>`
     }
 `
 
-const Input = ({label, size}: Props) => {
+const Input = ({label, size, onChange}: Props) => {
   return (
     <StylizedDiv>
         <Label>
             _{label}
         </Label>
-        <StylizedInput size={size} />
+        <StylizedInput size={size} onChange={onChange} />
     </StylizedDiv>
   )
 }
