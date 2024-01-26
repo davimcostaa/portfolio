@@ -142,7 +142,6 @@ export const ContactText = styled.span`
 
 export const CodeSection = styled.section`
       width: 630px;
-      max-width: 674px;
       border-right: 0.5px solid #1E2D3D;    
 `
 
@@ -152,12 +151,11 @@ export const Code = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 30px;
+    padding-top: 100px;
     border-top: 0.5px solid #1E2D3D;
-    overflow: auto;
-    @media screen and (max-width: 1450px) {
+    @media screen and (max-width: 1500px) {
       scrollbar-width: thin;   
-      max-height: 470px;
+      max-height: 80%;
       overflow-y: scroll;
       &::-webkit-scrollbar {
         width: 10px;
@@ -219,7 +217,6 @@ export const TechnologiesSection = styled.section`
       margin-left: 40px;
       overflow-y: auto;
       scrollbar-width: thin;   
-      max-height: 470px;
       overflow-y: scroll;
       &::-webkit-scrollbar {
         width: 10px;
@@ -312,4 +309,27 @@ export const Message = styled.p`
 
 export const OrangeText = styled.span`
     color: #FEA55F;
+`
+
+export const Error = styled.span`
+    color: #E99287;
+    font-size: 13px;
+`
+
+export const ThanksSection = styled.section`
+
+    > h3 {
+      color: #FFF;
+      font-size: 26px;
+      font-weight: 450;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    > p {
+      color: #607B96;
+      text-align: center;
+      font-size: 18px;
+
+    }
 `

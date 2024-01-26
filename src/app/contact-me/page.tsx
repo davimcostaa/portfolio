@@ -3,20 +3,31 @@ import Footer from '@/src/components/Footer';
 import Input from '@/src/components/Input';
 import Menu from '@/src/components/Menu'
 import MenuMobile from '@/src/components/MenuMobile';
-import React, { useState, FormEvent } from 'react'
-import { Body, Folders, FolderName, Folder, PrimeiraParte, NomePasta, SubPasta, DivContact, FolterContact, Contact, ContactText, CodeSection, FileName, Code, Numbers, TechnologiesSection, Post, User, UserTop, Profile, UserData, UserName, PostContent, Text, Button, Message, OrangeText } from './styles';
+import React, { useState, FormEvent, useRef } from 'react'
+import { Body, Folders, FolderName, Folder, PrimeiraParte, NomePasta, SubPasta, DivContact, FolterContact, Contact, ContactText, CodeSection, FileName, Code, Numbers, TechnologiesSection, Post, User, UserTop, Profile, UserData, UserName, PostContent, Text, Button, Message, OrangeText, Error, ThanksSection } from './styles';
 import * as yup from "yup";
+import emailjs from '@emailjs/browser';
+import Loader from '@/src/components/Loader';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const AboutMe = () => {
 
   const [menuIsVisible, setMenuIsVisible] = useState(false);
   const [emailFolder, setEmailOpen] = useState(false);
   const [contactIsOpen, setContactIsOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [erros, setErros] = useState([]);
+  const [emailSent, setEmailSent] = useState(false);
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    message: '',
+    captcha: ''
+  });  
   const [numberOfLines, setNumberOfLines] = useState<number[]>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+  const captchaRef = useRef(null)
 
   let dataAtual = new Date();
   let nomeDoDia = dataAtual.toLocaleDateString('pt-BR', { weekday: 'long' });
@@ -24,10 +35,15 @@ const AboutMe = () => {
   let nomeDoMes = dataAtual.toLocaleDateString('pt-BR', { month: 'long' });
   let emailMessage = {}
 
+  const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
+  const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+  const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+  const siteKey = process.env.NEXT_PUBLIC_SITE_KEY;
+
   let schema = yup.object().shape({
-    name: yup.string().required(),
-    email: yup.string().email().required(),
-    message: yup.string().required()
+    name: yup.string().required('campo name é obrigatório!').min(3),
+    email: yup.string().email('insira um email válido').required('campo email é obrigatório!'),
+    message: yup.string().required('insira a mensagem.').min(10)
   });
 
   const handleClick = (text: string, fileName: string) => {
@@ -48,6 +64,10 @@ const AboutMe = () => {
 
   async function sendEmail(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    let token = captchaRef.current.getValue();
+    captchaRef.current.reset();
+
     emailMessage = {
       name,
       email,
@@ -56,16 +76,52 @@ const AboutMe = () => {
   
     schema
     .validate(emailMessage, { abortEarly: false })
-    .then((responseData) => {
-      console.log("no validation errors");
-      console.log(responseData);
+    .then(() => {
+
+        setLoading(true)
+
+        if (token) {
+        setErrors({name: '',
+        email: '',
+        message: '',
+        captcha: ''})
+
+        const params = {
+          emailMessage,
+          'g-recaptcha-response': token,
+        };
+        
+        emailjs.send(serviceId, templateId, params, publicKey)
+            .then(function(response) {
+              console.log(response.status, response.text)
+              response.status == 200 ? setLoading(false) : null;
+              setEmail('');
+              setName('');
+              setMessage('');
+              token = '';
+              setEmailSent(true);
+          }, function(error) {
+              console.log('FAILED...', error);
+          });
+        } 
   })
     .catch((err) => {
-      console.log(err);
-      console.log(err.name); // ValidationError
-      console.log(err.errors);
-      setErros(err.errors)
+      const errorsCopy = { ...errors };
+      err.errors?.forEach((error: string) => {
+        if (error.includes('name')) {
+          errorsCopy.name = error;
+        } else if (error.includes('email')) {
+          errorsCopy.email = error;
+        } else {
+          errorsCopy.message = error;
+        }
+      });
 
+      if (!token) {
+        errorsCopy.captcha = 'Preencha o captcha corretamente'
+      }
+      
+      setErrors(errorsCopy);
   });
   }
 
@@ -131,22 +187,38 @@ const AboutMe = () => {
                 contact
                 <img src='/close-icon.png' />
             </FileName>
-
-
             <Code>
-              <form onSubmit={sendEmail}>
-                <Input label='name:' onChange={(e) => setName(e.target.value)} />
-                <span>{erros[0]}</span>
-                <Input label='email:' onChange={(e) => setEmail(e.target.value)} />
-                <span>{erros[1]}</span>
-                <Input label='message:' size='big' onChange={(e) => setMessage(e.target.value)} />
-                <span>{erros[2]}</span>
+              {
+               loading 
+                ? <Loader /> 
+                : 
+                emailSent ? 
+                <ThanksSection>
+                  <h3>Thank you!</h3>
+                  <p>Your message has been accepted. You will receive an answer really soon!</p>
+                </ThanksSection>
+                :
+                <form onSubmit={sendEmail}>
+                <Input label='name:' value={name} onChange={(e) => setName(e.target.value)} />
+                <Error>{errors.name}</Error>
+                <Input label='email:' value={email} onChange={(e) => setEmail(e.target.value)} />
+                <Error>{errors.email}</Error>
+                <Input label='message:' value={message} size='big' onChange={(e) => setMessage(e.target.value)} />
+                <Error>{errors.message}</Error>
+                <br />
+                <ReCAPTCHA
+                  sitekey={siteKey}
+                  theme='dark'
+                  ref={captchaRef}
+                />
+                <Error>{errors.captcha}</Error>
+                <br />
                 <Button type='submit'>
                   submit-message
                 </Button>
-              </form>
-
-                    
+              </form>       
+              }
+                
             </Code>
             
         </CodeSection>
@@ -156,10 +228,10 @@ const AboutMe = () => {
               <Message>const <span>button</span> = <span>document.querySelector('<OrangeText>#textBtn</OrangeText>');</span></Message>
               <Message>const <span>message</span> = 
                 <span> &#123; <br />
-                  &nbsp;name: <OrangeText>"{name}",</OrangeText> <br />
-                  &nbsp;email: <OrangeText>"{email}",</OrangeText> <br />
-                  &nbsp;message: <OrangeText>"{message}",</OrangeText> <br />
-                  &nbsp;date: <OrangeText>{nomeDoDia}, {dia} {nomeDoMes} </OrangeText> <br />
+                  &nbsp;&nbsp;name: <OrangeText>"{name}",</OrangeText> <br />
+                  &nbsp;&nbsp;email: <OrangeText>"{email}",</OrangeText> <br />
+                  &nbsp;&nbsp;message: <OrangeText>"{message}",</OrangeText> <br />
+                  &nbsp;&nbsp;date: <OrangeText>{nomeDoDia}, {dia} {nomeDoMes} </OrangeText> <br />
                   &#125;  
                 </span>
               </Message>
@@ -170,7 +242,7 @@ const AboutMe = () => {
                   <span>
                       button.addEventListener('<OrangeText>click</OrangeText>', () =&#62; &#123;
                       <br/>
-                      &nbsp;form.send(message);
+                      &nbsp;&nbsp;form.send(message);
                       <br /> 
                       &#125;);
                   </span>

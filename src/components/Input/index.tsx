@@ -5,6 +5,7 @@ import styled from 'styled-components'
 interface Props {
     label: string
     size?: string
+    value: string
     onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -33,21 +34,21 @@ const StylizedInput = styled.input<SizeProps>`
     width: 372px;
     color: #465E77;
     padding: 10px 15px 10px 15px;
-    margin-bottom: 10px;
     height: ${(props) => (props.size === 'big' ? '100px' : '41px')};
-
+    margin-bottom: 5px;
+    margin-top: 5px;
     &:focus {
         outline: none;
     }
 `
 
-const Input = ({label, size, onChange}: Props) => {
+const Input = ({label, size, onChange, value}: Props) => {
   return (
     <StylizedDiv>
         <Label>
             _{label}
         </Label>
-        <StylizedInput size={size} onChange={onChange} />
+        <StylizedInput size={size} onChange={onChange} value={value} />
     </StylizedDiv>
   )
 }
