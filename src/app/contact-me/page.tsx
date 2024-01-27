@@ -3,12 +3,12 @@ import Footer from '@/src/components/Footer';
 import Input from '@/src/components/Input';
 import Menu from '@/src/components/Menu'
 import MenuMobile from '@/src/components/MenuMobile';
-import React, { useState, FormEvent, useRef } from 'react'
+import React, { useState, FormEvent, useRef, RefObject } from 'react'
 import { Body, Folders, FolderName, Folder, PrimeiraParte, NomePasta, SubPasta, DivContact, FolterContact, Contact, ContactText, CodeSection, FileName, Code, Numbers, TechnologiesSection, Post, User, UserTop, Profile, UserData, UserName, PostContent, Text, Button, Message, OrangeText, Error, ThanksSection } from './styles';
 import * as yup from "yup";
 import emailjs from '@emailjs/browser';
 import Loader from '@/src/components/Loader';
-import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA, { ReCAPTCHAProps } from "react-google-recaptcha";
 
 const AboutMe = () => {
 
@@ -27,13 +27,14 @@ const AboutMe = () => {
     captcha: ''
   });  
   const [numberOfLines, setNumberOfLines] = useState<number[]>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-  const captchaRef = useRef(null)
+  const captchaRef: RefObject<ReCAPTCHA> = useRef(null);
 
   let dataAtual = new Date();
   let nomeDoDia = dataAtual.toLocaleDateString('pt-BR', { weekday: 'long' });
   let dia = dataAtual.getDate();
   let nomeDoMes = dataAtual.toLocaleDateString('pt-BR', { month: 'long' });
   let emailMessage = {}
+  let token = ''
 
   const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
   const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
@@ -65,8 +66,8 @@ const AboutMe = () => {
   async function sendEmail(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    let token = captchaRef.current.getValue();
-    captchaRef.current.reset();
+      token = captchaRef.current?.getValue() ?? '';
+      captchaRef.current?.reset();
 
     emailMessage = {
       name,
@@ -91,6 +92,7 @@ const AboutMe = () => {
           'g-recaptcha-response': token,
         };
         
+        if (serviceId && templateId) {
         emailjs.send(serviceId, templateId, params, publicKey)
             .then(function(response) {
               console.log(response.status, response.text)
@@ -103,6 +105,7 @@ const AboutMe = () => {
           }, function(error) {
               console.log('FAILED...', error);
           });
+        }
         } 
   })
     .catch((err) => {
@@ -207,7 +210,7 @@ const AboutMe = () => {
                 <Error>{errors.message}</Error>
                 <br />
                 <ReCAPTCHA
-                  sitekey={siteKey}
+                  sitekey={siteKey || ''}
                   theme='dark'
                   ref={captchaRef}
                 />
