@@ -1,0 +1,25 @@
+{
+    "Home": {
+      "title": "Full-stack developer",
+      "greeting": "Hi all! I am ",
+      "emailTitle": "my e-mail",
+      "emailName": "myEmail",
+      "gitHubTitle": "you can also see my GitHub page",
+      "linkedinTitle": "you can also see my Linkedin page"
+    },
+    "About": {
+      "folderTitle": "personal-info",
+      "bioSubFolder": "about-me",
+      "bioSubFolder2": "experience",
+      "interestsFolder": "interests",
+      "interestsSubFolder": "",
+      "educationFolder": "education",
+      "educationSubFolder": "university",
+      "contact": "contacts",
+      "technologiesTitle": "Languages and technologies I have learned",
+      "technologiesSpan": "Created 2 months ago",
+      "about-me": "about-me",
+      "experience": "experience",
+      "university": "university"
+    }
+  }

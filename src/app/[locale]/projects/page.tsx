@@ -6,8 +6,9 @@ import MenuMobile from '@/src/components/MenuMobile';
 import TechnologyCheck from '@/src/components/TechnologyCheck';
 import { useState } from 'react'
 import { Body, Folders, FolderName, CodeSection, FileName, Code, Filters, Projects } from './styles';
-import projects from '../../data/projects.json'
+import projects from '../../../data/projects.json'
 import { useUpdateEffect } from 'react-use';
+import { useTranslations } from 'next-intl';
 
 const ProjectsPage = () => {
 
@@ -16,6 +17,8 @@ const ProjectsPage = () => {
   const [repeated, setRepeated] = useState<string[]>([]);
   const [filters, setFilters] = useState<string[]>([]);
   const [auxFilters, setAuxFilters] = useState<string[]>([]);
+
+  const t = useTranslations("Home");
 
   function filterList(technology: string): void {
     // estado auxiliar para evitar o loop infinito

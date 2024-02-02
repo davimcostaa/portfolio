@@ -5,6 +5,7 @@ import MenuMobile from '@/src/components/MenuMobile';
 import TechnologyCheck from '@/src/components/TechnologyCheck';
 import React, { useState } from 'react'
 import { Body, Folders, FolderName, Folder, PrimeiraParte, NomePasta, SubPasta, DivContact, FolterContact, Contact, ContactText, CodeSection, FileName, Code, Numbers, TechnologiesSection, Post, User, UserTop, Profile, UserData, UserName, PostContent, Text } from './styles';
+import { useTranslations } from 'next-intl';
 
 const AboutMe = () => {
 
@@ -15,69 +16,110 @@ const AboutMe = () => {
   const [contactIsOpen, setContactIsOpen] = useState(false);
   const [numberOfLines, setNumberOfLines] = useState<number[]>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
 
-  const aboutMe = `
-      * About me
-      * A 20-year-old professional with a technical 
-      * background in IT and a degree in
-      * Systems Analysis and Development, blending 
-      * skills in React, Next.js, Python,
-      * React Native, Express, and AdonisJS. 
-      * Experienced in IT support, advanced
-      * proficiency in English, and expertise in 
-      * automation and data processing with Python, as 
-      * well as creating applications with React.
-  `;
-
-  const experience = `
-      ** IT Support Intern
-      * IESB University Center 
-      * 
-      * March 2022 - June 2023.
-      
-          ---- Computer formatting;
-          ---- Administrative routines;
-          ---- Technical support campus staff.
-      * 
-      *   
-      *   
-      ** IT Intern
-      * National Indigenous People Foundation
-      * 
-      * July 2022 – December 2023.
-          ---- Python script coding for data processing.
-          ---- Python script coding for automation.
-          ---- Development of solutions using JavaScript.
-      * 
-      * 
-      *          
-      ** IT Intern
-      * National Indigenous People Foundation
-      *          
-      * July 2022 – December 2023.
-          ---- Python script coding for data processing.
-          ---- Python script coding for automation.
-          ---- Development of solutions using JavaScript.
-     *          
-
-  `;
-
-  const university = `
-      * University
-      *
-      * Graduated in Superior in Analysis and 
-      * Development of Systems by the 
-      * Institute of Superior Education of Brasilia.
-      * 
-      * Finished in December 2023.
-`;
+  const texts: {
+    [key: string]: string;
+  } = {
+    'about-me': `
+        * About me
+        * A 20-year-old professional with a technical 
+        * background in IT and a degree in
+        * Systems Analysis and Development, blending 
+        * skills in React, Next.js, Python,
+        * React Native, Express, and AdonisJS. 
+        * Experienced in IT support, advanced
+        * proficiency in English, and expertise in 
+        * automation and data processing with Python, as 
+        * well as creating applications with React.
+    `,
+    'sobre-mim': `
+    * Sobre mim
+    * Profissional de 20 anos com formação técnica 
+    * em TI e graduação em Análise e Desenvolvimento 
+    * de Sistemas, mesclando habilidades em React, 
+    * Next.js, Python, React Native, Express e 
+    * AdonisJS. Experiência em suporte de TI, 
+    * proficiência avançada  em inglês e especialização 
+    * em automação e processamento de dados com Python, 
+    * além da criação de aplicações com React.
+    `,
+    'experience': `
+        ** IT Support Intern
+        * IESB University Center 
+        * 
+        * March 2022 - June 2023.
+        
+            ---- Computer formatting;
+            ---- Administrative routines;
+            ---- Technical support campus staff.
+        * 
+        *   
+        *   
+        ** IT Intern
+        * National Indigenous People Foundation
+        * 
+        * July 2022 – December 2023.
+            ---- Python script coding for data processing.
+            ---- Python script coding for automation.
+            ---- Development of solutions using JavaScript.
+        * 
+        * 
+        *          
+       *          
+    `,
+    'experiencia': `
+        ** Estágio em Suporte de TI
+        * Centro Universitário IESB
+        * 
+        * Março de 2022 - Junho de 2023.
+        
+            ---- Formatação de computadores;
+            ---- Rotinas administrativas;
+            ---- Suporte técnico à equipe do campus.
+        * 
+        *   
+        *   
+        ** Estágio em TI
+        * Fundação Nacional do Índio
+        * 
+        * Julho de 2022 – Dezembro de 2023.
+            ---- Codificação de scripts Python para processamento de dados.
+            ---- Codificação de scripts Python para automação.
+            ---- Desenvolvimento de soluções utilizando JS.
+        * 
+        * 
+        *          
+       *          
+    `,
+    'university': `
+        * University
+        *
+        * Graduated in Superior in Analysis and 
+        * Development of Systems by the 
+        * Institute of Superior Education of Brasilia.
+        * 
+        * Finished in December 2023.
+    `,
+    'universidade': `
+    * Universidade
+    *
+    * Graduado em Superior de Análise /n
+    * e Desenvolvimento de Sistemas pelo
+    * Instituto de Educação Superior de Brasília.
+    * 
+    * Concluído em dezembro de 2023.
+`,
+  };
   
-  const [openText, setOpenText] = useState(aboutMe);
-  const [fileName, setFileName] = useState('about-me');
+  const t = useTranslations("About");
+  
+  const [openText, setOpenText] = useState(texts[t("about-me")]);
+  const [fileName, setFileName] = useState(t("bioSubFolder"));
 
   const handleClick = (text: string, fileName: string) => {
-    setOpenText(text);
+    console.log(text)
+    setOpenText(texts[text]);
     setFileName(fileName);
-    contarLinhas(text);
+    contarLinhas(texts[text]);
   };
 
   function contarLinhas(str: string) {
@@ -104,7 +146,7 @@ const AboutMe = () => {
 
             <FolderName>
                 <img src='/arrow-down.png' />
-                personal-info
+                {t("folderTitle")}
             </FolderName>
 
               <div>
@@ -119,19 +161,19 @@ const AboutMe = () => {
                   </PrimeiraParte>
 
                   {bioIsOpen ? (
-                    <div onClick={(e) => { e.stopPropagation();  handleClick(aboutMe, 'about-me')}}>
+                    <div onClick={(e) => { e.stopPropagation();  handleClick(t("about-me"), t("bioSubFolder"))}}>
                         <SubPasta>
                           <img src='/file.png' />
-                          about-me
+                          {t("bioSubFolder")}
                         </SubPasta>
                     </div>
                   ) : null}
 
                   {bioIsOpen ? (
-                    <div onClick={(e) => { e.stopPropagation();  handleClick(experience, 'experience')}}>
+                    <div onClick={(e) => { e.stopPropagation();  handleClick(t("experience"), t("bioSubFolder2"))}}>
                         <SubPasta>
                           <img src='/file.png' />
-                          experience
+                          {t("bioSubFolder2")}
                         </SubPasta>
                     </div>
                   ) : null}
@@ -146,7 +188,7 @@ const AboutMe = () => {
 
                     <NomePasta>
                       <img src='/green-icon.png' />
-                      interests
+                      {t("interestsFolder")}
                     </NomePasta>
 
                     </PrimeiraParte>
@@ -162,15 +204,15 @@ const AboutMe = () => {
 
                       <NomePasta >
                         <img src='/blue-icon.png' />
-                        education
+                        {t("educationFolder")}
                       </NomePasta>
                       </PrimeiraParte>
                     
                     {educationIsOpen ? (
-                      <div onClick={(e) => { e.stopPropagation();  handleClick(university, 'university')}}>
+                      <div onClick={(e) => { e.stopPropagation();  handleClick(t("educationSubFolder"), t("educationSubFolder"))}}>
                         <SubPasta>
                           <img src='/file.png' />
-                          university
+                          {t("educationSubFolder")}
                         </SubPasta>
                       </div>
                     ) : null}
@@ -182,7 +224,7 @@ const AboutMe = () => {
             <DivContact isOpen={contactIsOpen} onClick={() => setContactIsOpen(!contactIsOpen)}>
                   <FolterContact>
                       <img src='/arrow-down.png' />
-                      contacts
+                      {t("contact")}
                   </FolterContact>
 
                   <Contact isOpen={contactIsOpen}>
@@ -225,7 +267,7 @@ const AboutMe = () => {
 
         <TechnologiesSection>
         
-            <Text> // Languages and technologies I have learned</Text>
+            <Text> // {t("technologiesTitle")}</Text>
             <Post>
                 <User>
                     <UserTop>

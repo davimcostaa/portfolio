@@ -10,7 +10,7 @@ import emailjs from '@emailjs/browser';
 import Loader from '@/src/components/Loader';
 import ReCAPTCHA, { ReCAPTCHAProps } from "react-google-recaptcha";
 
-const AboutMe = () => {
+const ContactMe = () => {
 
   const [menuIsVisible, setMenuIsVisible] = useState(false);
   const [emailFolder, setEmailOpen] = useState(false);
@@ -127,7 +127,6 @@ const AboutMe = () => {
       setErrors(errorsCopy);
   });
   }
-
 
   return (
     <>
@@ -260,4 +259,4 @@ const AboutMe = () => {
   )
 }
 
-export default AboutMe
+export default ContactMe

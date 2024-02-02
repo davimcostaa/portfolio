@@ -1,10 +1,12 @@
 "use client"
+import ContactVariables from "@/src/components/ContactVariables";
+import Footer from "@/src/components/Footer";
+import Menu from "@/src/components/Menu";
+import MenuMobile from "@/src/components/MenuMobile";
 import { useState } from "react";
 import styled from "styled-components";
-import ContactVariables from "../components/ContactVariables";
-import Footer from "../components/Footer";
-import Menu from "../components/Menu";
-import MenuMobile from "../components/MenuMobile";
+import { useTranslations } from 'next-intl';
+
 import './globals.css'
 
 const Body = styled.section`
@@ -63,6 +65,7 @@ const ImagemBlur = styled.img`
 export default function Home() {
   const [menuIsVisible, setMenuIsVisible] = useState(false);
 
+  const t = useTranslations("Home");
   return (
     <>
       <Menu setMenuIsVisible={setMenuIsVisible} />
@@ -70,15 +73,23 @@ export default function Home() {
 
       <Body>
         <SectionInfo>
-          <TituloSecundario>Hi all! I am</TituloSecundario>
+          <TituloSecundario>{t("greeting")}</TituloSecundario>
           <TituloPrincipal>Davi Costa</TituloPrincipal>
-          <TituloExpertise> &gt; Full-stack developer </TituloExpertise>
+          <TituloExpertise> &gt; {t("title")} </TituloExpertise>
 
           <SectionContact>
-            <ContactVariables titulo="my e-mail" nome="myEmail" url="davim.costa@outlook.com" />
-            <ContactVariables titulo="you can also see my GitHub page" nome="gitHubLink" url="https://github.com/davimcostaa" />
+            <ContactVariables 
+                titulo={t("emailTitle")} 
+                nome={t("emailName")} 
+                url="davim.costa@outlook.com" />
+
+            <ContactVariables 
+                titulo={t("gitHubTitle")} 
+                nome="gitHubLink" 
+                url="https://github.com/davimcostaa" />
+
             <ContactVariables
-              titulo="you can also see my Linkedin page"
+              titulo={t("linkedinTitle")} 
               nome="linkedinLink"
               url="https://linkedin.com/in/davi-marquesc"
             />

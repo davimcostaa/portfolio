@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
+import {useRouter} from '../../navigation';
 
 interface Props {
   setMenuIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
@@ -58,16 +59,11 @@ const LinkNavegacao = styled.div`
   align-items: center;
   cursor: pointer;
   height: 100%;
-
-  > a {
-    text-decoration: none;
-    color: #607B96;
+  color: #607B96;
 
     &: hover {
       color: #FFF;
     }
-  }
-  
   
 `;
 
@@ -85,10 +81,6 @@ const LinkContato = styled.div`
     display: none;
   }
 
-  > a {
-    text-decoration: none;
-    color: #607B96;
-
     &: hover {
       color: #FFF;
     }
@@ -103,6 +95,9 @@ const NomeImagemWrapper = styled.div`
 `;
 
 const Menu = ({setMenuIsVisible}: Props) => {
+ 
+const router = useRouter();
+
   return (
     <Header>
       <PrimeiraParte>
@@ -111,20 +106,14 @@ const Menu = ({setMenuIsVisible}: Props) => {
         </DivNome>
         
         <Links>
-            <LinkNavegacao>
-                <Link href='/'>
+            <LinkNavegacao onClick={() => router.push('/')}>
                   _hello
-                </Link>
             </LinkNavegacao>
-            <LinkNavegacao>
-                <Link href='/about-me'>
+            <LinkNavegacao onClick={() => router.push('/about-me')}>
                   _about-me
-                </Link>
             </LinkNavegacao>
-            <LinkNavegacao>
-            <Link href='/projects'>
+            <LinkNavegacao onClick={() => router.push('/projects')}>
                   _projects
-            </Link>
             </LinkNavegacao>
         </Links>
       </PrimeiraParte>
@@ -133,10 +122,8 @@ const Menu = ({setMenuIsVisible}: Props) => {
         <img src="/menu.png" alt="Menu" />
       </NomeImagemWrapper>
 
-      <LinkContato>
-          <Link href='/contact-me'>
+      <LinkContato onClick={() => router.push('/contact-me')}>
            _contact-me
-          </Link>
       </LinkContato>
     </Header>
   );
