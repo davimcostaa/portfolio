@@ -1,144 +1,142 @@
 [
     {
-      "nomeDoProjeto": "7daysofcode",
-      "imagem": "landingpage.png",
-      "descricao": "Landing page desenvolvida no 7 days Of Code.",
-      "tecnologia": "HTML",
-      "link": "https://davimcostaa.github.io/7daysofCode/"
+        "projectName": "7daysofcode",
+        "image": "landingpage.png",
+        "description": "Landing page developed during the 7 Days Of Code.",
+        "technology": "HTML",
+        "link": "https://davimcostaa.github.io/7daysofCode/"
     },
     {
-        "nomeDoProjeto": "alura-books",
-        "imagem": "alurabooks.png",
-        "descricao": "Landing page desenvolvida no curso de HTML e CSS da Alura.",
-        "tecnologia": "HTML",
+        "projectName": "alura-books",
+        "image": "alurabooks.png",
+        "description": "Landing page developed in the Alura HTML and CSS course.",
+        "technology": "HTML",
         "link": "https://davimcostaa.github.io/alura-books/"
     },
     {
-        "nomeDoProjeto": "blockchain-page",
-        "imagem": "blockchain-page.png",
-        "descricao": "Landing page desenvolvida segundo design do Figma.",
-        "tecnologia": "HTML",
+        "projectName": "blockchain-page",
+        "image": "blockchain-page.png",
+        "description": "Landing page developed based on Figma design.",
+        "technology": "HTML",
         "link": "https://davimcostaa.github.io/landing_page/"
     },
     {
-      "nomeDoProjeto": "formulario-dark-light",
-      "imagem": "formulario.png",
-      "descricao": "Formulário que muda de tema com a manipulação do DOM.",
-      "tecnologia": "Javascript",
-      "link": "https://davimcostaa.github.io/formulario_dark_light/"
+        "projectName": "formulario-dark-light",
+        "image": "formulario.png",
+        "description": "Form that changes theme with DOM manipulation.",
+        "technology": "Javascript",
+        "link": "https://davimcostaa.github.io/formulario_dark_light/"
     },
     {
-      "nomeDoProjeto": "api-clima",
-      "imagem": "clima.png",
-      "descricao": "Aplicação que consulta a API do Open Weather e do Unsplash.",
-      "tecnologia": "Javascript",
-      "link": "https://clima-api-theta.vercel.app"
+        "projectName": "api-clima",
+        "image": "clima.png",
+        "description": "Application that queries the Open Weather and Unsplash APIs.",
+        "technology": "Javascript",
+        "link": "https://clima-api-theta.vercel.app"
     },
     {
-        "nomeDoProjeto": "api-filmes",
-        "imagem": "filmes.png",
-        "descricao": "Aplicação que consulta a API do The Movie Database.",
-        "tecnologia": "Javascript",
+        "projectName": "api-filmes",
+        "image": "filmes.png",
+        "description": "Application that queries The Movie Database API.",
+        "technology": "Javascript",
         "link": "https://api-movies-bice.vercel.app"
     },
     {
-      "nomeDoProjeto": "codechella",
-      "imagem": "codechella.png",
-      "descricao": "Landing page de um festival de música.",
-      "tecnologia": "React",
-      "link": "https://codechella-omega.vercel.app"
+        "projectName": "codechella",
+        "image": "codechella.png",
+        "description": "Landing page for a fake music festival.",
+        "technology": "React",
+        "link": "https://codechella-omega.vercel.app"
     },
     {
-      "nomeDoProjeto": "cronometro-estudos",
-      "imagem": "cronometro.png",
-      "descricao": "Cronômetro para estudos desenvolvido com TypeScript.",
-      "tecnologia": "React",
-      "link": "https://alura-studies-typescript.vercel.app"
+        "projectName": "cronometro-estudos",
+        "image": "cronometro.png",
+        "description": "Study timer developed with TypeScript.",
+        "technology": "React",
+        "link": "https://alura-studies-typescript.vercel.app"
     },
     {
-      "nomeDoProjeto": "aluroni",
-      "imagem": "restaurante.png",
-      "descricao": "Página de divulgação de um restaurante com TypeScript.",
-      "tecnologia": "React",
-      "link": "https://aluroni-typescript.vercel.app"
+        "projectName": "aluroni",
+        "image": "restaurante.png",
+        "description": "Promotional page for a restaurant with TypeScript.",
+        "technology": "React",
+        "link": "https://aluroni-typescript.vercel.app"
     },
     {
-      "nomeDoProjeto": "voll",
-      "imagem": "voll.png",
-      "descricao": "Aplicação web em React com cadastro, login e dashboard.",
-      "tecnologia": "React",
-      "link": "https://voll-nine.vercel.app"
+        "projectName": "voll",
+        "image": "voll.png",
+        "description": "React web application with registration, login, and dashboard.",
+        "technology": "React",
+        "link": "https://voll-nine.vercel.app"
     },
     {
-      "nomeDoProjeto": "biblioteca-mobile",
-      "imagem": "biblioteca.png",
-      "descricao": "Aplicação mobile em React Native com cadastro, login e CRUDs.",
-      "tecnologia": "React",
-      "link": "https://github.com/davimcostaa/biblioteca_mobile"
+        "projectName": "biblioteca-mobile",
+        "image": "biblioteca.png",
+        "description": "React Native mobile application with registration, login, and CRUD operations.",
+        "technology": "React",
+        "link": "https://github.com/davimcostaa/biblioteca_mobile"
     },
     {
-      "nomeDoProjeto": "weather-runner",
-      "imagem": "weather-runner.png",
-      "descricao": "Jogo e app em React Native com estilo condicional ao clima. ",
-      "tecnologia": "React",
-      "link": "https://github.com/imxamanda/WeatherRunner"
+        "projectName": "weather-runner",
+        "image": "weather-runner.png",
+        "description": "Game and app in React Native with conditional styling based on weather.",
+        "technology": "React",
+        "link": "https://github.com/imxamanda/WeatherRunner"
     },
     {
-      "nomeDoProjeto": "de-olho",
-      "imagem": "deolho.png",
-      "descricao": "Projeto da faculdade consumindo a API dos Dados Abertos.",
-      "tecnologia": "Next",
-      "link": "https://de-olho.vercel.app"
+        "projectName": "de-olho",
+        "image": "deolho.png",
+        "description": "College project consuming the Open Data API.",
+        "technology": "Next",
+        "link": "https://de-olho.vercel.app"
     },
     {
-      "nomeDoProjeto": "jornada-do-heroi",
-      "imagem": "jornada.png",
-      "descricao": "Aplicação consultando API externa e criando um jogo de cartas.",
-      "tecnologia": "Next",
-      "link": "https://jornada-do-heroi-kappa.vercel.app"
+        "projectName": "jornada-do-heroi",
+        "image": "jornada.png",
+        "description": "Application querying external API and creating a card game.",
+        "technology": "Next",
+        "link": "https://jornada-do-heroi-kappa.vercel.app"
     },
     {
-      "nomeDoProjeto": "ponto-de-venda",
-      "imagem": "pdv.png",
-      "descricao": "Protótipo de um ponto de venda por um projeto de extensão acadêmico.",
-      "tecnologia": "Next",
-      "link": "https://github.com/fabrica-bayarea/pdv-front/tree/develop"
+        "projectName": "ponto-de-venda",
+        "image": "pdv.png",
+        "description": "Prototype of a point of sale for an academic extension project.",
+        "technology": "Next",
+        "link": "https://github.com/fabrica-bayarea/pdv-front/tree/develop"
     },
     {
-      "nomeDoProjeto": "portfolio",
-      "imagem": "portfolio.png",
-      "descricao": "Portfólio pessoal desenvolvido com Next e TypeScript.",
-      "tecnologia": "Next",
-      "link": "https://de-olho.vercel.app"
+        "projectName": "portfolio",
+        "image": "portfolio.png",
+        "description": "Personal portfolio developed with Next and TypeScript.",
+        "technology": "Next",
+        "link": "https://de-olho.vercel.app"
     },
     {
-      "nomeDoProjeto": "google-sheets",
-      "imagem": "sheets.png",
-      "descricao": "Script para extrair tabela online, tratá-la e lançar no Sheets.",
-      "tecnologia": "Python",
-      "link": "https://github.com/davimcostaa/google-sheets"
+        "projectName": "google-sheets",
+        "image": "sheets.png",
+        "description": "Script to extract online table, process it, and upload it to Sheets.",
+        "technology": "Python",
+        "link": "https://github.com/davimcostaa/google-sheets"
     },
     {
-      "nomeDoProjeto": "siafi-pandas",
-      "imagem": "pandas.png",
-      "descricao": "Script para tratamento de tabela excel.",
-      "tecnologia": "Python",
-      "link": "https://github.com/davimcostaa/TratamentoDados-Pandas"
+        "projectName": "siafi-pandas",
+        "image": "pandas.png",
+        "description": "Script for processing Excel table with Pandas.",
+        "technology": "Python",
+        "link": "https://github.com/davimcostaa/TratamentoDados-Pandas"
     },
     {
-      "nomeDoProjeto": "adonis-academico",
-      "imagem": "adonis-academico.png",
-      "descricao": "API criada com AdonisJS na matéria de BackEnd da faculdade.",
-      "tecnologia": "Adonis",
-      "link": "https://github.com/davimcostaa/Adonis-Academico-2022"
+        "projectName": "adonis-academico",
+        "image": "adonis-academico.png",
+        "description": "API created with AdonisJS in the college Backend subject.",
+        "technology": "Adonis",
+        "link": "https://github.com/davimcostaa/Adonis-Academico-2022"
     },
     {
-      "nomeDoProjeto": "adonis-biblioteca",
-      "imagem": "adonis-biblioteca.png",
-      "descricao": "API criada para o projeto integrado de backend da faculdade.",
-      "tecnologia": "Adonis",
-      "link": "https://github.com/davimcostaa/adonis-biblioteca"
+        "projectName": "adonis-biblioteca",
+        "image": "adonis-biblioteca.png",
+        "description": "API created for the college backend integrated project.",
+        "technology": "Adonis",
+        "link": "https://github.com/davimcostaa/adonis-biblioteca"
     }
-
-  ]
-  
+]

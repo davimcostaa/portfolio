@@ -46,7 +46,7 @@ const Input = ({label, size, onChange, value}: Props) => {
   return (
     <StylizedDiv>
         <Label>
-            _{label}
+            _{label}:
         </Label>
         <StylizedInput size={size} onChange={onChange} value={value} />
     </StylizedDiv>

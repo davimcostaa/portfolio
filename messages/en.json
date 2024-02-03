@@ -21,5 +21,33 @@
       "about-me": "about-me",
       "experience": "experience",
       "university": "university"
+    },
+    "Contact": {
+      "folderTitle": "contacts",
+      "subFolderTitle": "send",
+      "inputName": "name",
+      "inputMessage": "message",
+      "button": "submit-message",
+      "nameError": "name is a required field!",
+      "nameValidError": "please enter a valid name!",
+      "emailError": "email is a required field!",
+      "emailValidError": "please enter a valid email!",
+      "messageError": "message is a required field!",
+      "messageValidError": "please enter a valid message!",
+      "captchaError": "error verifying the captcha, please try again.",
+      "thank": "Thank you!",
+      "messageEmailSent": "Your message has been accepted. You will receive an answer really soon!"
+    },
+    "Projects": {
+      "projects": "en"
+    },
+    "Footer": {
+      "text": "find me in:"
+    },
+    "Menu": {
+      "hello": "hello",
+      "about": "about-me",
+      "projects": "projects",
+      "contact": "contact-me"
     }
   }

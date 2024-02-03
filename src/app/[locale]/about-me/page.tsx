@@ -116,7 +116,6 @@ const AboutMe = () => {
   const [fileName, setFileName] = useState(t("bioSubFolder"));
 
   const handleClick = (text: string, fileName: string) => {
-    console.log(text)
     setOpenText(texts[text]);
     setFileName(fileName);
     contarLinhas(texts[text]);

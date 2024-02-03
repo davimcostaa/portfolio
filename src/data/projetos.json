@@ -1,0 +1,142 @@
+[
+  {
+    "projectName": "7daysofcode",
+    "image": "landingpage.png",
+    "description": "Landing page desenvolvida no 7 days Of Code.",
+    "technology": "HTML",
+    "link": "https://davimcostaa.github.io/7daysofCode/"
+  },
+  {
+      "projectName": "alura-books",
+      "image": "alurabooks.png",
+      "description": "Landing page desenvolvida no curso de HTML e CSS da Alura.",
+      "technology": "HTML",
+      "link": "https://davimcostaa.github.io/alura-books/"
+  },
+  {
+      "projectName": "blockchain-page",
+      "image": "blockchain-page.png",
+      "description": "Landing page desenvolvida segundo design do Figma.",
+      "technology": "HTML",
+      "link": "https://davimcostaa.github.io/landing_page/"
+  },
+  {
+    "projectName": "formulario-dark-light",
+    "image": "formulario.png",
+    "description": "Formulário que muda de tema com a manipulação do DOM.",
+    "technology": "Javascript",
+    "link": "https://davimcostaa.github.io/formulario_dark_light/"
+  },
+  {
+    "projectName": "api-clima",
+    "image": "clima.png",
+    "description": "Aplicação que consulta a API do Open Weather e do Unsplash.",
+    "technology": "Javascript",
+    "link": "https://clima-api-theta.vercel.app"
+  },
+  {
+      "projectName": "api-filmes",
+      "image": "filmes.png",
+      "description": "Aplicação que consulta a API do The Movie Database.",
+      "technology": "Javascript",
+      "link": "https://api-movies-bice.vercel.app"
+  },
+  {
+    "projectName": "codechella",
+    "image": "codechella.png",
+    "description": "Landing page de um festival de música.",
+    "technology": "React",
+    "link": "https://codechella-omega.vercel.app"
+  },
+  {
+    "projectName": "cronometro-estudos",
+    "image": "cronometro.png",
+    "description": "Cronômetro para estudos desenvolvido com TypeScript.",
+    "technology": "React",
+    "link": "https://alura-studies-typescript.vercel.app"
+  },
+  {
+    "projectName": "aluroni",
+    "image": "restaurante.png",
+    "description": "Página de divulgação de um restaurante com TypeScript.",
+    "technology": "React",
+    "link": "https://aluroni-typescript.vercel.app"
+  },
+  {
+    "projectName": "voll",
+    "image": "voll.png",
+    "description": "Aplicação web em React com cadastro, login e dashboard.",
+    "technology": "React",
+    "link": "https://voll-nine.vercel.app"
+  },
+  {
+    "projectName": "biblioteca-mobile",
+    "image": "biblioteca.png",
+    "description": "Aplicação mobile em React Native com cadastro, login e CRUDs.",
+    "technology": "React",
+    "link": "https://github.com/davimcostaa/biblioteca_mobile"
+  },
+  {
+    "projectName": "weather-runner",
+    "image": "weather-runner.png",
+    "description": "Jogo e app em React Native com estilo condicional ao clima. ",
+    "technology": "React",
+    "link": "https://github.com/imxamanda/WeatherRunner"
+  },
+  {
+    "projectName": "de-olho",
+    "image": "deolho.png",
+    "description": "Projeto da faculdade consumindo a API dos Dados Abertos.",
+    "technology": "Next",
+    "link": "https://de-olho.vercel.app"
+  },
+  {
+    "projectName": "jornada-do-heroi",
+    "image": "jornada.png",
+    "description": "Aplicação consultando API externa e criando um jogo de cartas.",
+    "technology": "Next",
+    "link": "https://jornada-do-heroi-kappa.vercel.app"
+  },
+  {
+    "projectName": "ponto-de-venda",
+    "image": "pdv.png",
+    "description": "Protótipo de um ponto de venda por um projeto de extensão acadêmico.",
+    "technology": "Next",
+    "link": "https://github.com/fabrica-bayarea/pdv-front/tree/develop"
+  },
+  {
+    "projectName": "portfolio",
+    "image": "portfolio.png",
+    "description": "Portfólio pessoal desenvolvido com Next e TypeScript.",
+    "technology": "Next",
+    "link": "https://de-olho.vercel.app"
+  },
+  {
+    "projectName": "google-sheets",
+    "image": "sheets.png",
+    "description": "Script para extrair tabela online, tratá-la e lançar no Sheets.",
+    "technology": "Python",
+    "link": "https://github.com/davimcostaa/google-sheets"
+  },
+  {
+    "projectName": "siafi-pandas",
+    "image": "pandas.png",
+    "description": "Script para tratamento de tabela excel.",
+    "technology": "Python",
+    "link": "https://github.com/davimcostaa/TratamentoDados-Pandas"
+  },
+  {
+    "projectName": "adonis-academico",
+    "image": "adonis-academico.png",
+    "description": "API criada com AdonisJS na matéria de BackEnd da faculdade.",
+    "technology": "Adonis",
+    "link": "https://github.com/davimcostaa/Adonis-Academico-2022"
+  },
+  {
+    "projectName": "adonis-biblioteca",
+    "image": "adonis-biblioteca.png",
+    "description": "API criada para o projeto integrado de backend da faculdade.",
+    "technology": "Adonis",
+    "link": "https://github.com/davimcostaa/adonis-biblioteca"
+  }
+]

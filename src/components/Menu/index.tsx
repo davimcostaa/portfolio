@@ -1,8 +1,8 @@
 "use client";
-import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 import {useRouter} from '../../navigation';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   setMenuIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
@@ -95,6 +95,8 @@ const NomeImagemWrapper = styled.div`
 `;
 
 const Menu = ({setMenuIsVisible}: Props) => {
+
+const t = useTranslations("Menu");
  
 const router = useRouter();
 
@@ -107,13 +109,13 @@ const router = useRouter();
         
         <Links>
             <LinkNavegacao onClick={() => router.push('/')}>
-                  _hello
+                  _{t("hello")}
             </LinkNavegacao>
             <LinkNavegacao onClick={() => router.push('/about-me')}>
-                  _about-me
+                  _{t("about")}
             </LinkNavegacao>
             <LinkNavegacao onClick={() => router.push('/projects')}>
-                  _projects
+                  _{t("projects")}
             </LinkNavegacao>
         </Links>
       </PrimeiraParte>
@@ -123,7 +125,7 @@ const router = useRouter();
       </NomeImagemWrapper>
 
       <LinkContato onClick={() => router.push('/contact-me')}>
-           _contact-me
+           _{t("contact")}
       </LinkContato>
     </Header>
   );

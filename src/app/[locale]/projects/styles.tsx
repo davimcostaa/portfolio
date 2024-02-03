@@ -28,7 +28,7 @@ export const Folders = styled.section`
 
 export const FolderName = styled.div`
     cursor: pointer;
-    height: 40.6px;
+    height: 41.6px;
     width: 100%;
     border-bottom: 0.5px solid #1E2D3D;
     display: flex;
@@ -86,10 +86,6 @@ export const PrimeiraParte = styled.div`
     width: 100%;
     gap: 13px;
     align-items: center;
-
-    > img {
-
-    }
 `
 
 export const FilterTechnology = styled.div`
@@ -164,6 +160,7 @@ export const Code = styled.section`
     display: flex;
     border-top: 0.5px solid #1E2D3D;
     overflow: auto;
+    
     &::-webkit-scrollbar {
       width: 10px;
     }

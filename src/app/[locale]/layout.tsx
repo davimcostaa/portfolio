@@ -6,8 +6,6 @@ import StyledComponentsRegistry from './styled-components-registry'
 
 const font = Fira_Code({ subsets: ['latin'] })
 
-
-
 export const metadata: Metadata = {
   title: 'Davi Costa',
 }

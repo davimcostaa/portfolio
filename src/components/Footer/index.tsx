@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components';
 import linkedinDark from '../../../public/logos/linkedin-dark.png'
 import gitHubDark from '../../../public/logos/github-dark.png'
+import { useTranslations } from 'next-intl';
 
 interface LogoProps {
     leftBorder?: boolean;
@@ -72,11 +73,14 @@ const GitHubLink = styled.a`
 `
 
 const Footer = () => {
+
+    const t = useTranslations("Footer");
+
   return (
     <FooterStyled>
         <FindMe>
             <DivNome>
-                find me in:
+            {t("text")}
             </DivNome>
 
             <Logo leftBorder={true}>

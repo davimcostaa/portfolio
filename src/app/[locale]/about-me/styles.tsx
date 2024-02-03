@@ -24,7 +24,7 @@ export const Folders = styled.section`
 
 export const FolderName = styled.div`
     cursor: pointer;
-    height: 41px;
+    height: 41.6px;
     width: 100%;
     border-bottom: 0.5px solid #1E2D3D;
     display: flex;
@@ -149,8 +149,7 @@ export const Code = styled.section`
     display: flex;
     border-top: 0.5px solid #1E2D3D;
     overflow: auto;
-    @media screen and (max-width: 1450px) {
-      scrollbar-width: thin;   
+    @media screen and (max-width: 1550px) {
       max-height: 470px;
       overflow-y: scroll;
       &::-webkit-scrollbar {

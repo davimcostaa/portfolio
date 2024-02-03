@@ -8,7 +8,8 @@ import { Body, Folders, FolderName, Folder, PrimeiraParte, NomePasta, SubPasta, 
 import * as yup from "yup";
 import emailjs from '@emailjs/browser';
 import Loader from '@/src/components/Loader';
-import ReCAPTCHA, { ReCAPTCHAProps } from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useTranslations } from 'next-intl';
 
 const ContactMe = () => {
 
@@ -26,13 +27,14 @@ const ContactMe = () => {
     message: '',
     captcha: ''
   });  
-  const [numberOfLines, setNumberOfLines] = useState<number[]>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
   const captchaRef: RefObject<ReCAPTCHA> = useRef(null);
 
+  const t = useTranslations("Contact");
+
   let dataAtual = new Date();
-  let nomeDoDia = dataAtual.toLocaleDateString('pt-BR', { weekday: 'long' });
+  let nomeDoDia = dataAtual.toLocaleDateString('en', { weekday: 'long' });
   let dia = dataAtual.getDate();
-  let nomeDoMes = dataAtual.toLocaleDateString('pt-BR', { month: 'long' });
+  let nomeDoMes = dataAtual.toLocaleDateString('en', { month: 'long' });
   let emailMessage = {}
   let token = ''
 
@@ -42,26 +44,11 @@ const ContactMe = () => {
   const siteKey = process.env.NEXT_PUBLIC_SITE_KEY;
 
   let schema = yup.object().shape({
-    name: yup.string().required('campo name é obrigatório!').min(3),
-    email: yup.string().email('insira um email válido').required('campo email é obrigatório!'),
-    message: yup.string().required('insira a mensagem.').min(10)
+    name: yup.string().required(t("nameError")).min(3, t("nameValidError")),
+    email: yup.string().email(t("emailValidError")).required(t("emailError")),
+    message: yup.string().required(t("messageError")).min(10, t("messageValidError"))
   });
 
-  const handleClick = (text: string, fileName: string) => {
-    contarLinhas(text);
-  };
-
-  function contarLinhas(str: string) {
-    const linhas = str.split('\n');
-    const numeroDeLinhas = linhas.length;
-    const linesArray = []
-  
-    for (let index = 1; index <= numeroDeLinhas; index++) {
-      linesArray.push(index)
-    }
-
-    setNumberOfLines(linesArray)
-  }
 
   async function sendEmail(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -111,7 +98,7 @@ const ContactMe = () => {
     .catch((err) => {
       const errorsCopy = { ...errors };
       err.errors?.forEach((error: string) => {
-        if (error.includes('name')) {
+        if (error.includes('name') || error.includes('nome') ) {
           errorsCopy.name = error;
         } else if (error.includes('email')) {
           errorsCopy.email = error;
@@ -121,7 +108,7 @@ const ContactMe = () => {
       });
 
       if (!token) {
-        errorsCopy.captcha = 'Preencha o captcha corretamente'
+        errorsCopy.captcha = t("captchaError")
       }
       
       setErrors(errorsCopy);
@@ -139,7 +126,7 @@ const ContactMe = () => {
 
             <FolderName>
                 <img src='/arrow-down.png' />
-                contacts
+                {t("folderTitle")}
             </FolderName>
 
               <div>
@@ -157,7 +144,7 @@ const ContactMe = () => {
                     <div onClick={(e) => { e.stopPropagation();}}>
                         <SubPasta>
                           <img src='/file.png' />
-                          write
+                          {t("subFolderTitle")}
                         </SubPasta>
                     </div>
                   ) : null}
@@ -167,7 +154,7 @@ const ContactMe = () => {
             <DivContact isOpen={contactIsOpen} onClick={() => setContactIsOpen(!contactIsOpen)}>
                   <FolterContact>
                       <img src='/arrow-down.png' />
-                      contacts
+                      {t("folderTitle")}
                   </FolterContact>
 
                   <Contact isOpen={contactIsOpen}>
@@ -186,7 +173,7 @@ const ContactMe = () => {
         <CodeSection>
           
             <FileName>
-                contact
+                {t("folderTitle")}
                 <img src='/close-icon.png' />
             </FileName>
             <Code>
@@ -196,16 +183,16 @@ const ContactMe = () => {
                 : 
                 emailSent ? 
                 <ThanksSection>
-                  <h3>Thank you!</h3>
-                  <p>Your message has been accepted. You will receive an answer really soon!</p>
+                  <h3>{t("thank")}</h3>
+                  <p>{t("messageEmailSent")}</p>
                 </ThanksSection>
                 :
                 <form onSubmit={sendEmail}>
-                <Input label='name:' value={name} onChange={(e) => setName(e.target.value)} />
+                <Input label={t("inputName")} value={name} onChange={(e) => setName(e.target.value)} />
                 <Error>{errors.name}</Error>
-                <Input label='email:' value={email} onChange={(e) => setEmail(e.target.value)} />
+                <Input label='email' value={email} onChange={(e) => setEmail(e.target.value)} />
                 <Error>{errors.email}</Error>
-                <Input label='message:' value={message} size='big' onChange={(e) => setMessage(e.target.value)} />
+                <Input label={t("inputMessage")} value={message} size='big' onChange={(e) => setMessage(e.target.value)} />
                 <Error>{errors.message}</Error>
                 <br />
                 <ReCAPTCHA

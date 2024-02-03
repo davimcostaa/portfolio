@@ -21,5 +21,33 @@
       "about-me": "sobre-mim",
       "experience": "experiencia",
       "university": "universidade"
-    }
+    },
+    "Contact": {
+      "folderTitle": "contato",
+      "subFolderTitle": "enviar",
+      "inputName": "nome",
+      "inputMessage": "mensagem",
+      "button": "enviar-mensagem",
+      "nameError": "campo nome é obrigatório!",
+      "nameValidError": "insira um nome válido!",
+      "emailError": "campo email é obrigatório!",
+      "emailValidError": "insira um email válido!",
+      "messageError": "insira uma mensagem!",
+      "messageValidError": "insira uma messagem válida!",
+      "captchaError": "preencha o captcha corretamente!",
+      "thank": "Obrigado!",
+      "messageEmailSent": "O e-mail foi enviado. Você receberá uma resposta em breve."
+  },
+  "Projects": {
+      "projects": "pt"
+  },
+  "Footer": {
+      "text": "encontre-me em:"
+  },
+  "Menu": {
+    "hello": "olá",
+    "about": "sobre-mim",
+    "projects": "projetos",
+    "contact": "contato"
   }
+}

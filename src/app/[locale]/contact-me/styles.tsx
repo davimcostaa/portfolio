@@ -21,13 +21,11 @@ export const Folders = styled.section`
     font-weight: 400;
     justify-content: space-between;
 
-
-
 `
 
 export const FolderName = styled.div`
     cursor: pointer;
-    height: 41px;
+    height: 41.6px;
     width: 100%;
     border-bottom: 0.5px solid #1E2D3D;
     display: flex;
