@@ -152,7 +152,6 @@ export const Code = styled.section`
     padding-top: 100px;
     border-top: 0.5px solid #1E2D3D;
     @media screen and (max-width: 1500px) {
-      scrollbar-width: thin;   
       max-height: 80%;
       overflow-y: scroll;
       &::-webkit-scrollbar {
@@ -213,20 +212,7 @@ export const TechnologiesSection = styled.section`
       flex-direction: column;
       padding-top: 100px;
       margin-left: 40px;
-      overflow-y: auto;
-      scrollbar-width: thin;   
-      overflow-y: scroll;
-      &::-webkit-scrollbar {
-        width: 10px;
-      }
-    
-      &::-webkit-scrollbar-thumb {
-        background-color: #607B96;
-      }
-    
-      &::-webkit-scrollbar-track {
-        background-color: #011627;
-      }
+     
       > div {
         width: 85%;
       }

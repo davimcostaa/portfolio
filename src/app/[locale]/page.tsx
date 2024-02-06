@@ -8,6 +8,7 @@ import styled from "styled-components";
 import { useTranslations } from 'next-intl';
 
 import './globals.css'
+import LanguageChanger from "@/src/components/LanguageChanger";
 
 const Body = styled.section`
   display: grid;
@@ -69,7 +70,7 @@ export default function Home() {
   return (
     <>
       <Menu setMenuIsVisible={setMenuIsVisible} />
-      <MenuMobile menuIsVisible={menuIsVisible} setMenuIsVisible={setMenuIsVisible} />
+      <MenuMobile $menuIsVisible={menuIsVisible} setMenuIsVisible={setMenuIsVisible} />
 
       <Body>
         <SectionInfo>
@@ -93,10 +94,13 @@ export default function Home() {
               nome="linkedinLink"
               url="https://linkedin.com/in/davi-marquesc"
             />
+
           </SectionContact>
         </SectionInfo>
-
+        <div>
+        <LanguageChanger />            
         <ImagemBlur src="/blur.svg" />
+        </div>
       </Body>
 
       <Footer />

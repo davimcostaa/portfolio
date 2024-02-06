@@ -36,7 +36,8 @@
       "messageValidError": "please enter a valid message!",
       "captchaError": "error verifying the captcha, please try again.",
       "thank": "Thank you!",
-      "messageEmailSent": "Your message has been accepted. You will receive an answer really soon!"
+      "messageEmailSent": "Your message has been accepted. You will receive an answer really soon!",
+      "lang": "en"
     },
     "Projects": {
       "projects": "en"

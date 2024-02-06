@@ -102,7 +102,7 @@ const ProjectsPage = () => {
   return (
     <>
       <Menu setMenuIsVisible={setMenuIsVisible} />
-      <MenuMobile menuIsVisible={menuIsVisible} setMenuIsVisible={setMenuIsVisible} />
+      <MenuMobile $menuIsVisible={menuIsVisible} setMenuIsVisible={setMenuIsVisible} />
 
       <Body>
         <Folders>

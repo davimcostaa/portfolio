@@ -118,7 +118,7 @@ const ContactMe = () => {
   return (
     <>
       <Menu setMenuIsVisible={setMenuIsVisible} />
-      <MenuMobile menuIsVisible={menuIsVisible} setMenuIsVisible={setMenuIsVisible} />
+      <MenuMobile $menuIsVisible={menuIsVisible} setMenuIsVisible={setMenuIsVisible} />
 
       <Body>
         <Folders>
@@ -199,6 +199,7 @@ const ContactMe = () => {
                   sitekey={siteKey || ''}
                   theme='dark'
                   ref={captchaRef}
+                  hl={t("lang") == 'en' ? 'en' : 'pt-BR'}
                 />
                 <Error>{errors.captcha}</Error>
                 <br />

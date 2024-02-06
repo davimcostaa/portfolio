@@ -36,7 +36,8 @@
       "messageValidError": "insira uma messagem válida!",
       "captchaError": "preencha o captcha corretamente!",
       "thank": "Obrigado!",
-      "messageEmailSent": "O e-mail foi enviado. Você receberá uma resposta em breve."
+      "messageEmailSent": "O e-mail foi enviado. Você receberá uma resposta em breve.",
+      "lang": "pt"
   },
   "Projects": {
       "projects": "pt"

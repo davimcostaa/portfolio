@@ -5,7 +5,7 @@ import closeIcon from '../../../public/close.png'
 import styled from 'styled-components';
 
 interface Props {
-    menuIsVisible: boolean
+    $menuIsVisible: boolean
     setMenuIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -51,9 +51,9 @@ const LinkNavegacao = styled.div`
     height: 55px;
 `;  
 
-const MenuMobile = ({menuIsVisible, setMenuIsVisible}: Props) => {
+const MenuMobile = ({$menuIsVisible, setMenuIsVisible}: Props) => {
   return (
-    <Container isvisible={menuIsVisible ? 'true' : 'false'} >
+    <Container isvisible={$menuIsVisible ? 'true' : 'false'} >
         <PrimeiraParte>
             <DivNome>
             davi-costa

@@ -98,7 +98,11 @@ const AboutMe = () => {
         * Institute of Superior Education of Brasilia.
         * 
         * Finished in December 2023.
+        * 
+        * Awarded as the best student of the course 
+        * in the class of the 2nd semester of 2023.
     `,
+
     'universidade': `
     * Universidade
     *
@@ -107,6 +111,9 @@ const AboutMe = () => {
     * Instituto de Educação Superior de Brasília.
     * 
     * Concluído em dezembro de 2023.
+    * 
+    * Laureado como melhor aluno do curso
+    * da turma do 2° semestre de 2023.
 `,
   };
   
@@ -137,7 +144,7 @@ const AboutMe = () => {
   return (
     <>
       <Menu setMenuIsVisible={setMenuIsVisible} />
-      <MenuMobile menuIsVisible={menuIsVisible} setMenuIsVisible={setMenuIsVisible} />
+      <MenuMobile $menuIsVisible={menuIsVisible} setMenuIsVisible={setMenuIsVisible} />
 
       <Body>
         <Folders>

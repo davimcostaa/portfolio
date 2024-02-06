@@ -6,7 +6,7 @@ import gitHubDark from '../../../public/logos/github-dark.png'
 import { useTranslations } from 'next-intl';
 
 interface LogoProps {
-    leftBorder?: boolean;
+    $leftBorder?: boolean;
   }
 
 const FooterStyled = styled.footer`
@@ -37,7 +37,7 @@ const DivNome = styled.div`
 const Logo = styled.div<LogoProps>`
     height: 100%;
     width: 52px;
-    ${(props) => props.leftBorder && 'border-left: 1px solid #1E2D3D;'}
+    ${(props) => props.$leftBorder && 'border-left: 1px solid #1E2D3D;'}
     border-right: 1px solid #1E2D3D;
     display: flex;
     align-items: center;
@@ -83,7 +83,7 @@ const Footer = () => {
             {t("text")}
             </DivNome>
 
-            <Logo leftBorder={true}>
+            <Logo $leftBorder={true}>
                 <a href='https://www.linkedin.com/in/davi-marquesc/' target="_blank" rel="noopener noreferrer">
                     <Image src={linkedinDark} alt='Linkedin Logo' width={24} height={24} />
                 </a>

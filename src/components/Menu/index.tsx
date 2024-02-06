@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import styled from 'styled-components';
-import {useRouter} from '../../navigation';
+import { useRouter } from '../../navigation';
 import { useTranslations } from 'next-intl';
 
 interface Props {
@@ -45,6 +45,12 @@ const Links = styled.div`
   display: flex;
   height: 100%;
 
+  
+  &:last-child {
+    border-right: 0.5px solid #1E2D3D;
+  }
+
+
   @media (max-width: 810px) {
     display: none;
   }
@@ -52,7 +58,6 @@ const Links = styled.div`
 
 const LinkNavegacao = styled.div`
   border-left: 0.5px solid #1E2D3D;
-  border-right: 0.5px solid #1E2D3D;
   padding-left: 31px;
   padding-right: 32px;
   display: flex;
@@ -96,9 +101,8 @@ const NomeImagemWrapper = styled.div`
 
 const Menu = ({setMenuIsVisible}: Props) => {
 
-const t = useTranslations("Menu");
- 
-const router = useRouter();
+  const t = useTranslations("Menu");
+  const router = useRouter();
 
   return (
     <Header>
