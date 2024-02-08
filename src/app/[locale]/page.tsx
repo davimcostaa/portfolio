@@ -12,12 +12,17 @@ import LanguageChanger from "@/src/components/LanguageChanger";
 
 const Body = styled.section`
   display: grid;
+  height: 100vh;
   grid-template-columns: 60% 40%;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     grid-template-columns: 100%;
+    overflow: auto;
+    overflow-y: scroll;
   }
+
+
 `;
 
 const SectionInfo = styled.section`
@@ -27,28 +32,43 @@ const SectionInfo = styled.section`
   padding-left: 237px;
   justify-content: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     padding-left: 20px;
     padding-right: 20px;
+    margin-top: 120px;
+    height: fit-content;
   }
+
 `;
 
 const TituloPrincipal = styled.h1`
   color: #E5E9F0;
   font-size: 62px;
   font-weight: 400;
+
+  @media (max-width: 640px) {
+    font-size: 52px;
+  }
 `;
 
 const TituloSecundario = styled.h3`
   color: #E5E9F0;
   font-size: 18px;
   font-weight: 450;
+
+  @media (max-width: 640px) {
+    font-size: 16px;
+  }
 `;
 
 const TituloExpertise = styled.h2`
   color: #4D5BCE;
   font-size: 32px;
   font-weight: 450;
+
+  @media (max-width: 640px) {
+    font-size: 22px;
+  }
 `;
 
 const SectionContact = styled.section`
@@ -56,11 +76,19 @@ const SectionContact = styled.section`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media (max-width: 640px) {
+    margin-top: 80px;
+  }
 `;
 
 const ImagemBlur = styled.img`
   width: 100%;
   height: 90%;
+
+  @media (max-width: 640px) {
+    display: none;
+  }
 `;
 
 export default function Home() {

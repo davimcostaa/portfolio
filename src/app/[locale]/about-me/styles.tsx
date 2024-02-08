@@ -8,6 +8,13 @@ export const Body = styled.div`
     padding-top: 56.191px;
     display: flex;
     height: 100vh;
+    
+    @media (max-width: 640px) {
+      width: 100vw;
+      flex-direction: column;
+      overflow: auto;
+      overflow-y: scroll;
+    }
 `
 
 export const Folders = styled.section`
@@ -20,6 +27,10 @@ export const Folders = styled.section`
     font-size: 16px;
     font-weight: 400;
     justify-content: space-between;
+
+    @media (max-width: 640px) {
+      width: 100vw;
+    }
 `
 
 export const FolderName = styled.div`
@@ -33,6 +44,10 @@ export const FolderName = styled.div`
     gap: 7px;
     padding-left: 23px;
     margin-bottom: 16px;
+
+    @media (max-width: 640px) {
+      width: 100vw;
+    }
 `
 
 export const FileName = styled.div`
@@ -46,6 +61,12 @@ export const FileName = styled.div`
     padding: 12px;
     gap: 7px;
     color: #607B96;
+
+    @media (max-width: 640px) {
+      width: 100vw;
+      border-top: 0.5px solid #1E2D3D;
+      margin-top: 10px;
+    }
 `
 
 export const Folder = styled.div`
@@ -95,6 +116,10 @@ export const DivContact = styled.div<FolterContactProps>`
         `}
     
     `}
+
+    @media (max-width: 640px) {
+      display: none;
+    }
 `;
 
 export const FolterContact = styled.div`
@@ -128,6 +153,7 @@ export const Contact = styled.div<FolterContactProps>`
       `}
     
   `}
+
 `
 
 export const ContactText = styled.span`
@@ -142,6 +168,10 @@ export const CodeSection = styled.section`
       border-right: 0.5px solid #1E2D3D;    
       @media screen and (min-width: 1500px) {
         width: 760px;
+      }
+
+      @media (max-width: 640px) {
+        width: 100vw;
       }
 `
 
@@ -163,6 +193,10 @@ export const Code = styled.section`
       &::-webkit-scrollbar-track {
         background-color: #011627;
       }
+    }
+
+    @media (max-width: 640px) {
+      width: 100vw;
     }
 `
 
@@ -201,6 +235,10 @@ export const Text = styled.div`
           padding-left: 10px;
         }
       }
+
+      @media (max-width: 640px) {
+        width: 80vw;
+      }
     
 `
 
@@ -209,11 +247,20 @@ export const TechnologiesSection = styled.section`
       border-top: 0.5px solid #1E2D3D;
       flex: 1;
       width: 740px;
+
+      @media (max-width: 640px) {
+        width: 100vw;
+      }
+      
 `
 
 export const Post = styled.div`  
       width: 664px;
       margin: 30px;
+
+      @media (max-width: 640px) {
+        width: 92vw;
+      }
 `
 
 export const User = styled.div`
@@ -260,5 +307,17 @@ export const PostContent = styled.div`
 
     @media screen and (min-width: 1500px) {
       width: 100%;
+    }
+
+    @media (max-width: 640px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: fit-content;
+      padding: 10px;
+      width: 80%;
+      gap: 4px;
+      margin-bottom: 65px;
     }
 `

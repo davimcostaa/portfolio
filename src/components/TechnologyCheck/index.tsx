@@ -18,6 +18,11 @@ const Check = styled.div`
     > span {
         color: white;
     }
+
+    
+    @media (max-width: 640px) {
+        margin-right: 0px;
+      }
 `
 
 const CheckIcon = styled.img`

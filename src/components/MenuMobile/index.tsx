@@ -3,6 +3,9 @@ import React from 'react'
 import { Container } from './styles';
 import closeIcon from '../../../public/close.png'
 import styled from 'styled-components';
+import Footer from '../Footer';
+import { useRouter } from '@/src/navigation';
+import { useTranslations } from 'next-intl';
 
 interface Props {
     $menuIsVisible: boolean
@@ -27,20 +30,19 @@ const PrimeiraParte = styled.div`
   padding-right: 23px;
   height: 56.191px;
   border-bottom: 0.5px solid #1E2D3D;
-
+  width: 100%;
 `;
   
 const Links = styled.div`
     width: 100%;
-    height: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 `;
 
 
 const LinkNavegacao = styled.div`
-    color: #607B96;
+    color: #FFF;
     border-top: 0.5px solid #1E2D3D;
     border-bottom: 0.5px solid #1E2D3D;
     padding-left: 31px;
@@ -52,6 +54,10 @@ const LinkNavegacao = styled.div`
 `;  
 
 const MenuMobile = ({$menuIsVisible, setMenuIsVisible}: Props) => {
+
+  const router = useRouter();
+  const t = useTranslations("Menu");
+
   return (
     <Container isvisible={$menuIsVisible ? 'true' : 'false'} >
         <PrimeiraParte>
@@ -59,22 +65,22 @@ const MenuMobile = ({$menuIsVisible, setMenuIsVisible}: Props) => {
             davi-costa
             </DivNome>
             <Image src={closeIcon} width={16} height={16} alt='Close icon' onClick={() => setMenuIsVisible(false)} /> 
-
         </PrimeiraParte>
         <Links>
-            <LinkNavegacao>
-                _hello
+            <LinkNavegacao onClick={() => router.push('/')}>
+                _{t("hello")}
             </LinkNavegacao>
-            <LinkNavegacao>
-                _about-me
+            <LinkNavegacao onClick={() => router.push('/about-me')}>
+                _{t("about")}
             </LinkNavegacao>
-            <LinkNavegacao>
-                _projects
+            <LinkNavegacao onClick={() => router.push('/projects')}>
+                _{t("projects")}
             </LinkNavegacao>
-            <LinkNavegacao>
-                _contact-me
+            <LinkNavegacao onClick={() => router.push('/contact-me')}>
+                _{t("contact")}
             </LinkNavegacao>
         </Links>
+        <Footer />
     </Container>
   )
 }

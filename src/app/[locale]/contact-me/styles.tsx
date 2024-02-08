@@ -21,6 +21,10 @@ export const Folders = styled.section`
     font-weight: 400;
     justify-content: space-between;
 
+    @media (max-width: 640px) {
+      display: none;
+    }
+
 `
 
 export const FolderName = styled.div`
@@ -141,6 +145,13 @@ export const ContactText = styled.span`
 export const CodeSection = styled.section`
       width: 630px;
       border-right: 0.5px solid #1E2D3D;    
+
+      @media (max-width: 640px) {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 `
 
 export const Code = styled.section`
@@ -165,6 +176,11 @@ export const Code = styled.section`
       &::-webkit-scrollbar-track {
         background-color: #011627;
       }
+    }
+
+    @media (max-width: 640px) {
+      width: 100vw;
+      overflow-x: hidden;
     }
 `
 
@@ -215,6 +231,10 @@ export const TechnologiesSection = styled.section`
      
       > div {
         width: 85%;
+      }
+
+      @media (max-width: 640px) {
+        display: none;
       }
 `
 

@@ -9,6 +9,13 @@ export const Body = styled.div`
     box-sizing: border-box;
     display: flex;
     height: 100vh;
+
+    @media (max-width: 640px) {
+      width: 100vw;
+      flex-direction: column;
+      overflow: auto;
+      overflow-y: scroll;
+    }
 `
 
 export const Folders = styled.section`
@@ -24,6 +31,10 @@ export const Folders = styled.section`
     @media screen and (max-width: 1674px) {
       width: 221px;
     }
+
+    @media (max-width: 640px) {
+      width: 100vw;
+    }
 `
 
 export const FolderName = styled.div`
@@ -36,6 +47,10 @@ export const FolderName = styled.div`
     justify-content: flex-start;
     gap: 7px;
     padding-left: 23px;
+
+    @media (max-width: 640px) {
+      width: 100vw;
+    }
 `
 
 export const FileName = styled.div`
@@ -49,6 +64,12 @@ export const FileName = styled.div`
     padding: 12px;
     gap: 7px;
     color: #607B96;
+
+    @media (max-width: 640px) {
+      width: 100vw;
+      border-top: 0.5px solid #1E2D3D;
+      margin-top: 10px;
+    }
 `
 
 export const Folder = styled.div`
@@ -150,8 +171,16 @@ export const ContactText = styled.span`
 
 export const CodeSection = styled.section`
       width: calc(100vw - 244px);
+
       @media screen and (max-width: 1674px) {
         width: calc(100vw - 221px);
+      }
+
+      @media (max-width: 640px) {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 `
 
@@ -172,6 +201,12 @@ export const Code = styled.section`
     &::-webkit-scrollbar-track {
       background-color: #011627;
     }
+
+    @media (max-width: 640px) {
+      width: 100vw;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
 `
 
 export const Projects = styled.section`
@@ -187,6 +222,7 @@ export const Projects = styled.section`
     @media screen and (max-width: 1674px) {
       max-height: 70vh;
     }
+
 `
 
 export const Numbers = styled.div`

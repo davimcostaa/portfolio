@@ -40,6 +40,10 @@ const StylizedInput = styled.input<SizeProps>`
     &:focus {
         outline: none;
     }
+
+    @media (max-width: 640px) {
+        width: 70vw;
+      }
 `
 
 const Input = ({label, size, onChange, value}: Props) => {

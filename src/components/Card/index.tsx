@@ -30,6 +30,11 @@ const ProjectCard = styled.div`
     background: #011221;
     border-radius: 15px;
     border: 1px solid #1E2D3D;
+
+    @media (max-width: 640px) {
+      width: 291px;
+      height: 328px;
+    }
 `
 
 const Info = styled.div`

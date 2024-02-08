@@ -13,6 +13,8 @@ export const Container = styled.section<ContainerProps>`
   right: 0;
   bottom: 0;
   z-index: 5;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;

@@ -16,12 +16,17 @@ const Changer = styled.div`
     color: #607B96;
     gap: 5px;
 
+
     > span {
         &:hover {
             color: #43D9AD;
             cursor: default; 
         }
     }
+
+    @media (max-width: 640px) {
+        margin-bottom: 100px;
+      }
 `
 
 const Portuguese = styled.p<Props>`
