@@ -42,6 +42,7 @@ const ProjectsPage = () => {
   }, [])
 
   function filterList(technology: string): void {
+
     // estado auxiliar para evitar o loop infinito
     setAuxFilters(prevFilters => {
       const newFilters = [...prevFilters, technology];
@@ -59,11 +60,15 @@ const ProjectsPage = () => {
     // verificar se o filtro está sendo clicado de novo
     const uniqueFilters = filters.filter(function(elemento, i) {
         if(filters.indexOf(elemento) !== i) {
+            if (repeated.filter(item => item === elemento).length > 0) {
+              repeated.splice(repeated.indexOf(elemento), 1);
+              return false
+            }
             repeated.push(elemento)
         }
         return filters.indexOf(elemento) == i;
     })
-
+  
     // verificar se os filtros estão no array de repetidos para filtrar ou tirar o filtro
     const filteredProjects = uniqueFilters.flatMap((filter) => {
       if (t("projects") === "pt") {
@@ -85,16 +90,17 @@ const ProjectsPage = () => {
     
     if (filteredProjects.length != 0) {
       setProjectsLista(filteredProjects);
-    } else {
-      if (t("projects") === 'pt') {
-        setProjectsLista(projects)
-      } 
-      setProjectsLista(projectsEnglish)
-      setFilters([]);
       setRepeated([]);
+    } else {
+        if (t("projects") === 'pt') {
+          setProjectsLista(projects);
+          setFilters([]);
+          setRepeated([]);
+        } 
+        setProjectsLista(projectsEnglish)
+        setFilters([]);
+        setRepeated([]);
     }
-
-    // checar se o estado repeated possui itens duplicados
     
   }, [auxFilters]);
 
@@ -130,7 +136,7 @@ const ProjectsPage = () => {
         <CodeSection>
           
             <FileName>
-                React, Vue
+                my projects
                 <img src='/close-icon.png' />
             </FileName>
 

@@ -56,7 +56,7 @@ export const FolderName = styled.div`
 export const FileName = styled.div`
     cursor: pointer;
     height: 40.6px;
-    width: 218.48px;
+    width: 218.48px;    
     border-right: 0.5px solid #1E2D3D;
     display: flex;
     align-items: center;
@@ -87,6 +87,13 @@ export const Filters = styled.div`
     align-items: flex-start;
     gap: 24px;
     padding: 22px;
+
+    @media (max-width: 640px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
 `
 
 export const NomePasta = styled.div`
