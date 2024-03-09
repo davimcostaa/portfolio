@@ -61,6 +61,7 @@ const AboutMe = () => {
             ---- Python script coding for data processing.
             ---- Python script coding for automation.
             ---- Development of solutions using JavaScript.
+            ---- Creation of queries for Postgres database.
         * 
         * 
         *          
@@ -85,6 +86,7 @@ const AboutMe = () => {
             ---- Codificação de scripts Python para processamento de dados.
             ---- Codificação de scripts Python para automação.
             ---- Desenvolvimento de soluções utilizando JS.
+            ---- Criação de querys para banco de dados Postgres.
         * 
         * 
         *          
@@ -297,6 +299,7 @@ const AboutMe = () => {
                   <TechnologyCheck icon='python' name='Python' />
                   <TechnologyCheck icon='sql' name='SQL' />
                   <TechnologyCheck icon='express' name='Express' />
+                  <TechnologyCheck icon='postgres' name='Postgres' />
                </PostContent>
                
             </Post>

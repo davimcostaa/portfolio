@@ -19,7 +19,7 @@ const FooterStyled = styled.footer`
     justify-content: space-between;
     align-items: center;
     padding-left: 23px;
-    padding-right: 23px;
+    padding-right: 23px;    
 `
 
 const FindMe = styled.div`
@@ -46,7 +46,7 @@ const Logo = styled.div<LogoProps>`
     &:hover {
         img {
             content: url(${'./logos/linkedin-light.png'});
-        }
+    }
 `
 
 const GitHubLink = styled.a`
@@ -62,14 +62,12 @@ const GitHubLink = styled.a`
         }
     }
 
-    > span {
-        @media (max-width: 600px) {
-            display: none;
-          }
+    @media (max-width: 600px) {
+        height: 100%;
+        > span {
+           font-size: 14px;
+        }
     }
-    
-    
-
 `
 
 const Footer = () => {
@@ -88,11 +86,6 @@ const Footer = () => {
                     <Image src={linkedinDark} alt='Linkedin Logo' width={24} height={24} />
                 </a>
             </Logo>
-            {/* <Logo leftBorder={false}>
-                <a href='https://www.linkedin.com/in/davi-marquesc/'>
-                    <Image src={linkedinDark} alt='Linkedin Logo' style={{width: '24px'}} />
-                </a>
-            </Logo> */}
         </FindMe>
 
         <GitHubLink href='https://github.com/davimcostaa' target="_blank" rel="noopener noreferrer">

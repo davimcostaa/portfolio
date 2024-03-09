@@ -84,6 +84,13 @@
     "link": "https://github.com/imxamanda/WeatherRunner"
   },
   {
+    "projectName": "agua-capital",
+    "image": "agua-capital.png",
+    "description": "App de níveis de água em reservatórios de Brasília.",
+    "technology": "Next",
+    "link": "https://agua-capital.vercel.app"
+},
+  {
     "projectName": "de-olho",
     "image": "deolho.png",
     "description": "Projeto da faculdade consumindo a API dos Dados Abertos.",
