@@ -49,11 +49,18 @@
     "link": "https://codechella-omega.vercel.app"
   },
   {
-    "projectName": "cronometro-estudos",
-    "image": "cronometro.png",
-    "description": "Cronômetro para estudos desenvolvido com TypeScript.",
+    "projectName": "banco-bet",
+    "image": "adm_conta.png",
+    "description": "Sistema de administração de contas e transferência Pix.",
     "technology": "React",
-    "link": "https://alura-studies-typescript.vercel.app"
+    "link": "https://www.linkedin.com/feed/update/urn:li:activity:7182089769445707776/"
+  },
+  {
+    "projectName": "photographer-page",
+    "image": "photographer-page.png",
+    "description": "Landing page para um profissional de fotografia",
+    "technology": "React",
+    "link": "https://photography-portfolio-mu-tan.vercel.app"
   },
   {
     "projectName": "aluroni",
