@@ -300,6 +300,8 @@ const AboutMe = () => {
                   <TechnologyCheck icon='sql' name='SQL' />
                   <TechnologyCheck icon='express' name='Express' />
                   <TechnologyCheck icon='postgres' name='Postgres' />
+                  <TechnologyCheck icon='java' name='Java' />
+                  <TechnologyCheck icon='spring' name='Spring' />
                </PostContent>
                
             </Post>

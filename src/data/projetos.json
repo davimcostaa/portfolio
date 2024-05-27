@@ -152,5 +152,19 @@
     "description": "API criada para o projeto integrado de backend da faculdade.",
     "technology": "Adonis",
     "link": "https://github.com/davimcostaa/adonis-biblioteca"
-  }
+  },
+  {
+    "projectName": "api-voll",
+    "image": "api_voll.png",
+    "description": "API de uma clínica criada com Spring Boot.",
+    "technology": "Java",
+    "link": "https://github.com/davimcostaa/api_voll"
+  },
+  {
+    "projectName": "LiterAlura",
+    "image": "spring.png",
+    "description": "Aplicação Spring que consome uma API externa.",
+    "technology": "Java",
+    "link": "https://github.com/davimcostaa/api_voll"
+}
 ]

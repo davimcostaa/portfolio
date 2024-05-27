@@ -295,7 +295,7 @@ export const Profile = styled.img`
 
 export const PostContent = styled.div`
     width: 65%;
-    height: 215.647px;
+    height: 245.647px;
     border-radius: 15px;
     border: 1px solid #1E2D3D;
     background: #011221;

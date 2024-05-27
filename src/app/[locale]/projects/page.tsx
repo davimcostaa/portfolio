@@ -126,6 +126,7 @@ const ProjectsPage = () => {
                 <TechnologyCheck icon='next' name='Next' changeIcon onClick={() => filterList('Next')} />
                 <TechnologyCheck icon='python' name='Python' changeIcon onClick={() => filterList('Python')} />
                 <TechnologyCheck icon='adonis' name='AdonisJS' changeIcon onClick={() => filterList('Adonis')}/>
+                <TechnologyCheck icon='java' name='Java' changeIcon onClick={() => filterList('Java')}/>
             </Filters>
   
           </div>
