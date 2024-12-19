@@ -43,10 +43,14 @@ const Logo = styled.div<LogoProps>`
     align-items: center;
     justify-content: center;
 
-    &:hover {
-        img {
-            content: url(${'./logos/linkedin-light.png'});
+    transition: transform 0.2s ease;
+
+     &:hover {
+        > a {
+            transform: scale(1.05);
+         }   
     }
+
 `
 
 const GitHubLink = styled.a`
@@ -56,10 +60,10 @@ const GitHubLink = styled.a`
     text-decoration: none;
     gap: 5px;
 
+    transition: transform 0.2s ease;
+
     &:hover {
-        img {
-            content: url(${'./logos/github-light.png'});
-        }
+        transform: scale(1.05);
     }
 
     @media (max-width: 600px) {
