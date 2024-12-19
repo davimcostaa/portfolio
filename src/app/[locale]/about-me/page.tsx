@@ -11,7 +11,6 @@ const AboutMe = () => {
 
   const [menuIsVisible, setMenuIsVisible] = useState(false);
   const [bioIsOpen, setBioIsOpen] = useState(false);
-  const [interestsIsOpen, setInterestsIsOpen] = useState(false);
   const [educationIsOpen, setEducationIsOpen] = useState(false);
   const [contactIsOpen, setContactIsOpen] = useState(false);
   const [numberOfLines, setNumberOfLines] = useState<number[]>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
@@ -43,17 +42,6 @@ const AboutMe = () => {
     * além da criação de aplicações com React.
     `,
     'experience': `
-        ** IT Support Intern
-        * IESB University Center 
-        * 
-        * March 2022 - June 2023.
-        
-            ---- Computer formatting;
-            ---- Administrative routines;
-            ---- Technical support campus staff.
-        * 
-        *   
-        *   
         ** IT Intern
         * National Indigenous People Foundation
         * 
@@ -64,21 +52,24 @@ const AboutMe = () => {
             ---- Creation of queries for Postgres database.
         * 
         * 
-        *          
+      *          
+        ** Fullstack developer
+        * Freelancer
+        * 
+        * March 2024 – December 2024.
+            ---- Development of web interfaces with React.
+            ---- Version control with Git.
+            ---- API integration.
+            ---- API development with Express.
+
+            Delivered projects:
+                ---- Banking management system for affiliate accounts managed by administrator accounts.
+                ---- Highway control system.
+        *      
+       *         
        *          
     `,
     'experiencia': `
-        ** Estágio em Suporte de TI
-        * Centro Universitário IESB
-        * 
-        * Março de 2022 - Junho de 2023.
-        
-            ---- Formatação de computadores;
-            ---- Rotinas administrativas;
-            ---- Suporte técnico à equipe do campus.
-        * 
-        *   
-        *   
         ** Estágio em TI
         * Fundação Nacional do Índio
         * 
@@ -88,8 +79,22 @@ const AboutMe = () => {
             ---- Desenvolvimento de soluções utilizando JS.
             ---- Criação de querys para banco de dados Postgres.
         * 
-        * 
         *          
+       *          
+        ** Desenvolvedor full-stack
+        * Freelancer
+        * 
+        * Março de 2024 – Dezembro de 2024.
+            ---- Desenvolvimento de interfaces web com React.
+            ---- Versionamento com Git. 
+            ---- Integração com API. 
+            ---- Desenvolvimento de APIs com Express.
+
+            Projetos entregues: 
+                ---- Sistema de gerenciamento bancário para contas de afiliados por contas 
+                administradoras  
+                ---- Sistema de Controle Rodoviário.
+        *      
        *          
     `,
     'university': `
@@ -187,21 +192,7 @@ const AboutMe = () => {
                   ) : null}
                 </Folder>
 
-                  <Folder onClick={() => setInterestsIsOpen(!interestsIsOpen)}> 
-
-                    <PrimeiraParte>
-                    {
-                    interestsIsOpen ? <img src={`/arrow-open.png`} /> : <img src={`/arrow-right.png`} />
-                    }
-
-                    <NomePasta>
-                      <img src='/green-icon.png' />
-                      {t("interestsFolder")}
-                    </NomePasta>
-
-                    </PrimeiraParte>
-                      
-                  </Folder>
+                 
 
                   <Folder onClick={() => setEducationIsOpen(!educationIsOpen)}>
 
@@ -258,7 +249,7 @@ const AboutMe = () => {
             <Code>
                 <Numbers>
                   {numberOfLines.map((line) => (
-                    <span>{line}</span>
+                    <span key={line}>{line}</span>
                   ))}
                 </Numbers>
 

@@ -10,9 +10,8 @@
     "About": {
       "folderTitle": "personal-info",
       "bioSubFolder": "about-me",
-      "bioSubFolder2": "experience",
-      "interestsFolder": "interests",
-      "interestsSubFolder": "",
+      "bioSubFolder2": "experiences",
+
       "educationFolder": "education",
       "educationSubFolder": "university",
       "contact": "contacts",
