@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 interface ContainerProps {
-  isvisible: string;
+  $isvisible: string;
 }
 
 export const Container = styled.section<ContainerProps>`
@@ -26,7 +26,7 @@ export const Container = styled.section<ContainerProps>`
     right: 1rem;
   }
 
-   ${({isvisible}) => isvisible == 'true' && css`
+   ${({$isvisible}) => $isvisible == 'true' && css`
         opacity: 1; 
         pointer-events: auto;
    `}

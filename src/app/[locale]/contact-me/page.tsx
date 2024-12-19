@@ -151,18 +151,18 @@ const ContactMe = () => {
                 </Folder>
               </div>
             </div>
-            <DivContact isOpen={contactIsOpen} onClick={() => setContactIsOpen(!contactIsOpen)}>
+            <DivContact $isOpen={contactIsOpen} onClick={() => setContactIsOpen(!contactIsOpen)}>
                   <FolterContact>
                       <img src='/arrow-down.png' />
                       {t("folderTitle")}
                   </FolterContact>
 
-                  <Contact isOpen={contactIsOpen}>
+                  <Contact $isOpen={contactIsOpen}>
                     <img src='/mail-icon.png' />
                     <ContactText> davim.costa@outlook.com</ContactText>
                   </Contact>
 
-                  <Contact isOpen={contactIsOpen}>
+                  <Contact $isOpen={contactIsOpen}>
                     <img src='/phone-icon.png' />
                     <ContactText> (61) 99391-5306</ContactText>
                   </Contact>

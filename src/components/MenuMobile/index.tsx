@@ -59,7 +59,7 @@ const MenuMobile = ({$menuIsVisible, setMenuIsVisible}: Props) => {
   const t = useTranslations("Menu");
 
   return (
-    <Container isvisible={$menuIsVisible ? 'true' : 'false'} >
+    <Container $isvisible={$menuIsVisible ? 'true' : 'false'} >
         <PrimeiraParte>
             <DivNome>
             davi-costa

@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components"
 
 interface FolterContactProps {
-    isOpen: boolean;
+    $isOpen: boolean;
   }
 
 export const Body = styled.div`
@@ -93,7 +93,7 @@ export const DivContact = styled.div<FolterContactProps>`
     margin-bottom: 56px;
 
     ${(props) => css`
-      ${props.isOpen &&
+      ${props.$isOpen &&
       css`
         margin-bottom: 200px;
         > div > img {
@@ -128,7 +128,7 @@ export const Contact = styled.div<FolterContactProps>`
     padding-top: 10px;
 
     ${(props) => css`
-    ${!props.isOpen &&
+    ${!props.$isOpen &&
     css`
       padding-top: 5px;
       `}
